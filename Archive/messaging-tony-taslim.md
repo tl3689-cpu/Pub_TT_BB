@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BUSINESS AUTHORITY FOUNDATION
-Messaging House (v3)
-Client: Tony Taslim · 26 June 2026
+Messaging House (v2)
+Client: Tony Taslim · 17 June 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # MESSAGING HOUSE
@@ -55,7 +55,6 @@ These mirror the three content pillars, so messaging and content stay aligned.
 - Why it matters to the ideal client: the board question in the next 24 months is not how fast you grew, it is how fast you recover.
 - Proof point: resilient firms adapt and pivot through tax, regulatory and market shocks, while fragile firms go to surgery.
 - In their words: "Businesses will be judged on their ability to operate, not their ability to grow."
-- The endurance edge: resilience is the floor, not the ceiling. A firm built to last scales without breaking, secures what it is trusted with, sustains itself against decay, shields itself from the storm, and one day carries on without the founder who built it. Those are the five pillars of S-Architecture: Scale, Secure, Sustain, Shield, Succession. The last one is the hardest, because it asks the founder to build the one thing a founder is least equipped to build, a firm that does not need them.
 
 ---
 

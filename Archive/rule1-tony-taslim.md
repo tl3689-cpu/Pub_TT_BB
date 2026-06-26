@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BUSINESS AUTHORITY FOUNDATION
-Rule of 1 (v3)
-Client: Tony Taslim · 26 June 2026
+Rule of 1 (v2)
+Client: Tony Taslim · 17 June 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # RULE OF 1
@@ -54,7 +54,7 @@ Tony reads the firm at 360 degrees across people, process, technology and risk, 
 The THRIVE method fixes the structure, not the surface, and fits it to the people and process already there. Risk moves out of silos into one connected design.
 
 **Step 3 — Translate it into one operation:**
-Tony translates the structure into something a non-technical leader can run. The firm operates dependably, recovers fast, and protects margin. S-Architecture (Scale, Secure, Sustain, Shield, Succession) and adjacent offers extend the work, and the Fractional Resilience Advisor retainer keeps the structure sound over time.
+Tony translates the structure into something a non-technical leader can run. The firm operates dependably, recovers fast, and protects margin. S-Architecture and adjacent offers extend the work, and the Fractional Resilience Advisor retainer keeps the structure sound over time.
 
 ---
 

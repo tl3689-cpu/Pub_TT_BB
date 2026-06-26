@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BUSINESS AUTHORITY FOUNDATION
-ICP Document (v3)
-Client: Tony Taslim · 26 June 2026
+ICP Document (v2)
+Client: Tony Taslim · 17 June 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # IDEAL CUSTOMER PROFILE
@@ -17,7 +17,7 @@ Client: Tony Taslim · 26 June 2026
 | Role/Title | Founder and independent operational resilience advisor, Efficient Business Solutions |
 | Industry/Niche | Operational resilience and structural risk for mid-market professional and financial services firms |
 | Who They Serve | COOs, CFOs and CEOs of founder-led firms with $10M to $100M revenue and 25 to 250 staff |
-| Core Offer | The THRIVE method, extended through S-Architecture (Scale, Secure, Sustain, Shield, Succession), adjacent risk offers, and an ongoing Fractional Resilience Advisor retainer |
+| Core Offer | The THRIVE method, extended through S-Architecture (Scale, Secure, Sustain, Shield), adjacent risk offers, and an ongoing Fractional Resilience Advisor retainer |
 | Mission (one sentence) | Bring enterprise-grade structural resilience to mid-market firms, so operational fragility stops being a hidden commercial risk. |
 | Primary Outcome Delivered | The business operates dependably under pressure: lower risk, faster recovery, protected margin, and a clean answer when the board asks how quickly it can recover |
 
@@ -61,7 +61,7 @@ They believe working harder is enough, and it is not. Most advisors sell a brand
 
 **Commercial outcome:** Risk lowered and measured. Growth that holds instead of sliding backward. Confidence that one resignation or one incident will not trigger a crisis.
 
-**Founder outcome:** For the founder-CEO, a business that runs without them in every room, and the time and freedom that follows. This sits under key person dependency, not above it. The Succession pillar is where this becomes permanent: an orderly handover of leadership and ownership so the firm outlives the person who built it.
+**Founder outcome:** For the founder-CEO, a business that runs without them in every room, and the time and freedom that follows. This sits under key person dependency, not above it.
 
 **Identity outcome:** A leader who runs an enterprise-grade structure, not a fragile one held together by effort.
 

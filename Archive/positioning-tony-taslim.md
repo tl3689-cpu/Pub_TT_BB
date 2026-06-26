@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BUSINESS AUTHORITY FOUNDATION
-Brand Positioning (v3)
-Client: Tony Taslim · 26 June 2026
+Brand Positioning (v2)
+Client: Tony Taslim · 17 June 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # BRAND POSITIONING
@@ -22,8 +22,6 @@ You operate as: the enterprise architect for the mid-market, an independent advi
 
 This shifts the category from: "business consultant" or "IT advisor"
 To: "the enterprise architect mid-market firms never had, who fixes operational fragility as a commercial risk."
-
-The category now runs one step further. Durable control is where the work starts. Endurance is where it ends. S-Architecture, the five pillars of a firm built to last (Scale, Secure, Sustain, Shield, Succession), takes a firm from fragile success, through durable control, to a business that outlives its founder. This arc is set out in the Built to Operate Series, with the third book, Built for Legacy, devoted entirely to S-Architecture.
 
 ---
 
@@ -88,8 +86,8 @@ because he carries a $50M to $100M IBM enterprise track record and translates it
 2. Business Resilience Review, free, around 45 minutes.
 3. Executive Breakthrough Session, around $1,000 per leader.
 4. THRIVE implementation, two phases. Phase 1 (Track and Horizon), the entry, around $20,000 to $25,000. Phase 2 (R.I.V.E: Require, Implement, Visualise, Engage), $50,000 to $200,000, depending on business structure and complexity.
-5. S-Architecture continuation: Scale, Secure, Sustain, Shield, Succession. Succession is the highest pillar, the orderly handover of leadership and ownership so the firm outlives its founder.
-6. Adjacent offers: sector diagnostics, capital resilience, vendor fit audits.
+5. S-Architecture continuation: Scale, Secure, Sustain, Shield.
+6. Adjacent offers: sector diagnostics, capital resilience, succession risk, vendor fit audits.
 7. Fractional Resilience Advisor retainer, $10,000 per month, ongoing board-level advisory.
 
 ---

@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BUSINESS AUTHORITY FOUNDATION
-Business Inbox (v3)
-Client: Tony Taslim · 26 June 2026
+Business Inbox (v2)
+Client: Tony Taslim · 17 June 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # BUSINESS INBOX
@@ -53,14 +53,13 @@ Client: Tony Taslim · 26 June 2026
 - **Status:** Active.
 
 ### S-Architecture (continuation)
-- **What it is:** Five extension tracks after the core implementation. S-Architecture is the structure of a business built to last, the work taken on once a firm has built durable control.
-- **Tracks:** Scale (growth without proportional cost), Secure (cyber resilience and data integrity), Sustain (preventing process decay), Shield (regulatory, market and concentration risk mitigation), Succession (orderly handover of leadership and ownership so the firm outlives its founder).
-- **Note:** Succession is the highest and hardest pillar. It moved from a planned adjacent offer into the core architecture, because building a firm that does not need its founder is the summit of the endurance work, not a side track.
+- **What it is:** Four extension tracks after the core implementation.
+- **Tracks:** Scale (growth without proportional cost), Secure (cyber resilience and data integrity), Sustain (preventing process decay), Shield (regulatory and market risk mitigation).
 - **Status:** Active continuation.
 
 ### Adjacent Offers (continuation)
 - **What they are:** Targeted resilience offers that extend the relationship.
-- **Offers:** Sector diagnostics (for example healthcare and construction), capital resilience, vendor fit audits.
+- **Offers:** Sector diagnostics (for example healthcare and construction), capital resilience, succession risk, vendor fit audits.
 - **Status:** In build and rollout.
 
 ### Fractional Resilience Advisor (retainer)
@@ -83,7 +82,7 @@ The method is THRIVE: Track, Horizon, Require, Implement, Visualise, Engage.
 3. Leaders can take an Executive Breakthrough Session to map leverage points.
 4. THRIVE implementation builds the resilience, beginning with Phase 1 (Track and Horizon) over six to eight weeks, then Phase 2 (R.I.V.E) at $50,000 to $200,000 depending on structure and complexity.
 
-The work then extends through S-Architecture (Scale, Secure, Sustain, Shield, Succession) and the adjacent offers (sector diagnostics, capital resilience, vendor fit audits). The Fractional Resilience Advisor retainer keeps the structure sound over time.
+The work then extends through S-Architecture (Scale, Secure, Sustain, Shield) and the adjacent offers (sector diagnostics, capital resilience, succession risk, vendor fit audits). The Fractional Resilience Advisor retainer keeps the structure sound over time.
 
 ---
 
@@ -94,12 +93,8 @@ The work then extends through S-Architecture (Scale, Secure, Sustain, Shield, Su
 
 ### Enterprise pedigree
 - Architected $50M to $100M enterprise systems at IBM, where systems had to match people, process and the law in strict sectors like finance and aviation. Almost no mid-market competitor can claim this track record.
-- A national telecommunications transformation valued above $100M, engineered to 99.9999% resilience (around 30 seconds of downtime a year). It included the largest testing facility in the Southern Hemisphere, integrating state-of-the-art telecommunications equipment and showcasing that resilience to local and international audiences. This level was required to support emergency and other mission-critical services.
-- A critical systems program delivered for around $6M against a $21M budget, six months ahead of schedule. This is the headline under-budget, ahead-of-schedule proof point.
+- Telco: the largest testing facility in the Southern Hemisphere, integrating state-of-the-art telecommunications equipment and showcasing 99.9999% resilience (around 30 seconds of downtime a year) to local and international audiences. This level was required to support emergency and other mission-critical services.
 - Recycling and paper manufacturing, where downtime costs thousands of dollars a minute.
-
-### Credentials
-- Former enterprise architect at IBM. Holds a Master of Finance and the TOGAF enterprise architecture certification.
 
 ### Transformation case (Indonesian manufacturing)
 - Designed, developed and delivered a digital transformation program, moving manual, repetitive, paper-based work to automated, systemised, digital processes.
@@ -209,7 +204,7 @@ No single-department engagements when the risk sits in the structure. No solutio
 **Formats:** Long-form LinkedIn text posts, 1,500 to 2,500 characters. Book and additional social media presence planned.
 **Current posting status:** Active. Posting 1,500 to 2,500 character posts.
 **Upcoming launches or announcements:**
-- The Built to Operate Series. Built to Grow comes first, for founder-led firms still turning hustle into structure. Built to Operate follows, the case and the map for turning fragile success into durable control, told through eight real transformations, with a companion workbook and a step-by-step method book. Built for Legacy is the third and current book, the summit of the series, built entirely around S-Architecture: a business that scales without breaking, secures what it is trusted with, sustains itself against decay, shields itself from the storm, and one day carries on without the founder who built it. All support the BORe Diagnostic.
+- A book, *From Fragile Success to Durable Control*, supporting the Business Operational Resilience Diagnostic.
 - The Fractional Resilience Advisor retainer.
 - Sector-specific diagnostics for healthcare and construction.
 - Additional social media presence.
