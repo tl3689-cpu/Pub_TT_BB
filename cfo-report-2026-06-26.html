@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFO Weekly Revenue · Purely Personal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#E8294C; --primary-light:#F5607A;
+    --black:#0A0A0A; --ink:#15151A; --white:#FFFFFF; --off-white:#F8F7F5;
+    --gray:#E4E3E0; --gray-text:#5b5b62; --gray-light:#F2F1EE;
+    --good:#16A34A; --warn:#D97706; --bad:#DC2626;
+    --r-md:14px; --r-lg:22px; --pill:9999px;
+    --sh:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.06);
+    --grad:linear-gradient(135deg, color-mix(in srgb,var(--primary) 78%, #000) 0%, var(--primary) 48%, var(--primary-light) 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Rethink Sans',sans-serif;background:radial-gradient(80% 60% at 96% -12%, color-mix(in srgb,var(--primary) 14%, transparent), transparent 60%), radial-gradient(60% 50% at 0% 6%, color-mix(in srgb,var(--primary-light) 10%, transparent), transparent 55%), var(--off-white);background-attachment:fixed;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .doc{max-width:840px;margin:0 auto;padding:34px 22px 70px;}
+  .ohead{border-radius:var(--r-md);padding:26px 28px;margin-bottom:22px;color:#fff;background:var(--grad);box-shadow:0 16px 42px color-mix(in srgb,var(--primary) 30%, transparent);position:relative;overflow:hidden;}
+  .ohead::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.10);top:-120px;right:-60px;pointer-events:none;}
+  .ohead .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.82;font-weight:600;}
+  .ohead h1{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.02em;margin:5px 0 3px;}
+  .ohead .d{font-size:13px;opacity:.85;}
+  .sample-banner{background:color-mix(in srgb,var(--warn) 12%,#fff);border:1px solid color-mix(in srgb,var(--warn) 35%,var(--gray));border-radius:var(--r-md);padding:12px 18px;margin-bottom:18px;font-size:13px;color:var(--warn);font-weight:600;display:flex;align-items:center;gap:8px;}
+  .sec{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-text);font-weight:700;margin:24px 0 12px;}
+  .card{background:#fff;border:1px solid var(--gray);border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;margin-bottom:14px;border-left:4px solid var(--primary);}
+  .card h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);margin-bottom:12px;}
+  .row{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:14px;border-bottom:1px solid var(--gray-light);}
+  .row:last-child{border-bottom:none;}
+  .row .lbl{flex:1;color:var(--ink);}
+  .row .amt{font-weight:700;font-size:15px;}
+  .row .age{font-size:12px;color:var(--gray-text);margin-right:6px;}
+  .tagi{font-size:11px;font-weight:700;padding:2px 9px;border-radius:var(--pill);margin-left:auto;white-space:nowrap;}
+  .t-red{background:#fdecec;color:var(--bad);}
+  .t-amb{background:#fdf1de;color:var(--warn);}
+  .t-grn{background:#e7f6ee;color:var(--good);}
+  .t-grey{background:var(--gray-light);color:var(--gray-text);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .stat{background:#fff;border:1px solid var(--gray);border-radius:var(--r-md);box-shadow:var(--sh);padding:18px 20px;position:relative;overflow:hidden;}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
+  .stat .l{font-size:12px;color:var(--gray-text);}
+  .stat .n{font-size:32px;font-weight:800;letter-spacing:-.02em;margin-top:4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .stat .delta{font-size:13px;font-weight:600;margin-top:3px;}
+  .up{color:var(--good);} .down{color:var(--bad);} .flat{color:var(--warn);}
+  .bar{height:14px;border-radius:var(--pill);background:var(--gray-light);overflow:hidden;margin-top:10px;}
+  .bar i{display:block;height:100%;width:0;border-radius:var(--pill);background:linear-gradient(90deg,var(--primary),var(--primary-light));}
+  .goal-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;}
+  .goal-row .gl{color:var(--gray-text);}
+  .goal-row .gp{font-weight:700;}
+  .note{background:linear-gradient(135deg, var(--ink) 0%, color-mix(in srgb,var(--primary) 26%, var(--ink)) 100%);color:#fff;border-radius:var(--r-md);padding:18px 22px;font-size:15px;margin-top:6px;box-shadow:0 14px 36px rgba(0,0,0,.16);}
+  .note b{color:var(--primary-light);}
+  .qbox{width:100%;border:1px dashed rgba(255,255,255,.3);border-radius:10px;padding:12px;font-family:inherit;font-size:14px;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);margin-top:10px;resize:vertical;}
+  .qbox::placeholder{color:rgba(255,255,255,.4);}
+  .dm-draft{background:#fff;border:1px solid var(--gray);border-radius:var(--r-md);box-shadow:var(--sh);padding:16px 20px;margin-top:14px;}
+  .dm-draft .dm-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-text);margin-bottom:8px;}
+  .dm-draft .dm-body{font-size:14px;line-height:1.6;color:var(--ink);background:var(--gray-light);border-radius:8px;padding:12px 14px;white-space:pre-line;}
+  .dm-draft .dm-note{font-size:12px;color:var(--warn);margin-top:8px;font-weight:600;}
+  .pipeline-item{padding:9px 0;border-bottom:1px solid var(--gray-light);display:flex;align-items:center;gap:10px;font-size:14px;}
+  .pipeline-item:last-child{border-bottom:none;}
+  .pipeline-item .pi-name{flex:1;}
+  .pipeline-item .pi-val{font-weight:700;}
+  .pipeline-item .pi-stage{font-size:12px;color:var(--gray-text);margin-right:6px;}
+  footer{text-align:center;padding:30px 22px 10px;color:var(--gray-text);font-size:13px;}
+  footer b{color:var(--ink);}
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <div class="ohead">
+    <div class="k">CFO · Weekly revenue</div>
+    <h1>This week: $8,500</h1>
+    <div class="d">Friday, 26 June 2026 · read only, I never move money</div>
+  </div>
+
+  <div class="sample-banner">
+    &#9888; Sample data only. Replace with your real numbers to make this report useful.
+  </div>
+
+  <!-- HEADLINE METRICS -->
+  <div class="grid3">
+    <div class="stat">
+      <div class="l">This week</div>
+      <div class="n">$<span class="count" data-to="8500">0</span></div>
+      <div class="delta up">+37% vs last week ($6,200)</div>
+    </div>
+    <div class="stat">
+      <div class="l">This month (June)</div>
+      <div class="n">$<span class="count" data-to="22700">0</span></div>
+      <div class="delta flat">Week 4 of 4</div>
+    </div>
+    <div class="stat">
+      <div class="l">Pipeline</div>
+      <div class="n">$<span class="count" data-to="67500">0</span></div>
+      <div class="delta" style="color:var(--gray-text)">3 active deals</div>
+    </div>
+  </div>
+
+  <!-- MONTHLY GOAL PROGRESS -->
+  <div class="card" style="border-left-color:var(--gray);padding:16px 20px;">
+    <div class="goal-row">
+      <span class="gl">Monthly goal · $30,000</span>
+      <span class="gp">75.7%</span>
+    </div>
+    <div class="bar"><i data-pct="75.7%"></i></div>
+    <div style="font-size:12px;color:var(--warn);margin-top:8px;font-weight:600;">$7,300 to go before end of June. Four working days left.</div>
+  </div>
+
+  <!-- UNPAID INVOICES -->
+  <div class="sec">Unpaid invoices</div>
+  <div class="card">
+    <h4>2 outstanding · $7,700 total</h4>
+    <div class="row">
+      <span class="lbl">Apex Financial Group · Invoice #004</span>
+      <span class="age">12 days ago</span>
+      <span class="amt">$4,500</span>
+      <span class="tagi t-red">overdue · chase now</span>
+    </div>
+    <div class="row">
+      <span class="lbl">Meridian Consulting · Invoice #005</span>
+      <span class="age">3 days ago</span>
+      <span class="amt">$3,200</span>
+      <span class="tagi t-grey">sent · watch</span>
+    </div>
+  </div>
+
+  <!-- OVERDUE FOLLOW-UP DM -->
+  <div class="dm-draft">
+    <div class="dm-label">Draft follow-up · Apex Financial Group · Invoice #004 · $4,500 · 12 days overdue</div>
+    <div class="dm-body">Hi [Name],
+
+Just following up on Invoice #004 for $4,500 sent on 14 June.
+
+I want to make sure it landed in the right place. Sometimes these get caught in approval queues.
+
+If there is anything holding it up on your end, let me know and I will sort it. Otherwise, bank details are on the invoice if you need them again.
+
+Happy to help get this cleared quickly.</div>
+    <div class="dm-note">Draft only. Read before sending. Never sent automatically.</div>
+  </div>
+
+  <!-- ACTIVE PIPELINE -->
+  <div class="sec">Active pipeline</div>
+  <div class="card">
+    <h4>3 deals · $67,500 total</h4>
+    <div class="pipeline-item">
+      <span class="pi-name">Mid-market operations audit · Professional Services</span>
+      <span class="pi-stage">Proposal sent</span>
+      <span class="pi-val">$25,000</span>
+      <span class="tagi t-amb">stagnant 18d</span>
+    </div>
+    <div class="pipeline-item">
+      <span class="pi-name">ERP readiness review · Accounting firm</span>
+      <span class="pi-stage">Discovery call done</span>
+      <span class="pi-val">$18,500</span>
+      <span class="tagi t-grn">moving</span>
+    </div>
+    <div class="pipeline-item">
+      <span class="pi-name">Business operating system build · Financial advisory</span>
+      <span class="pi-stage">Verbal yes</span>
+      <span class="pi-val">$24,000</span>
+      <span class="tagi t-grn">close this week</span>
+    </div>
+  </div>
+
+  <!-- ATTENTION FLAGS -->
+  <div class="sec">Attention flags</div>
+  <div class="card">
+    <h4>3 items need your action</h4>
+    <div class="row">
+      <span class="lbl">Invoice #004 · Apex Financial Group · $4,500 · 12 days unpaid. Draft follow-up is above, send it today.</span>
+      <span class="tagi t-red">act today</span>
+    </div>
+    <div class="row">
+      <span class="lbl">Pipeline deal "Mid-market operations audit" stagnant for 18 days. Send a one-line follow-up to the contact before end of day Friday.</span>
+      <span class="tagi t-amb">nudge needed</span>
+    </div>
+    <div class="row">
+      <span class="lbl">Monthly run rate at 75.7% with four days left. Close the "Financial advisory" deal (verbal yes) and June hits the target.</span>
+      <span class="tagi t-amb">close the deal</span>
+    </div>
+  </div>
+
+  <!-- FIVE CHECKS SUMMARY -->
+  <div class="sec">Five financial checks</div>
+  <div class="grid2">
+    <div class="card" style="border-left-color:var(--good);">
+      <h4>Weekly revenue</h4>
+      <div style="font-size:15px;">$8,500 this week vs $6,200 last week. <strong>Up 37%.</strong> Clean week.</div>
+    </div>
+    <div class="card" style="border-left-color:var(--warn);">
+      <h4>Pipeline health</h4>
+      <div style="font-size:15px;">$67,500 across 3 deals. Average deal $22,500. One deal stagnant at 18 days. Follow up today.</div>
+    </div>
+    <div class="card" style="border-left-color:var(--bad);">
+      <h4>Unpaid invoices</h4>
+      <div style="font-size:15px;">$7,700 outstanding. Invoice #004 is 12 days overdue. That is a conversation problem, not a numbers problem. Send the draft above.</div>
+    </div>
+    <div class="card" style="border-left-color:var(--warn);">
+      <h4>Monthly run rate</h4>
+      <div style="font-size:15px;">$22,700 of $30,000 target. 75.7% with four days left. Close the verbal-yes deal and June lands.</div>
+    </div>
+  </div>
+
+  <div class="note">
+    One revenue action this week with the biggest impact?
+    <textarea class="qbox" rows="2" placeholder="Close the financial advisory deal. Verbal yes is not a closed deal. Get the paperwork signed today."></textarea>
+    <div style="margin-top:12px;font-size:14px;">Revenue is always the better move. <b>Chase the $4,500 invoice, close the $24,000 verbal yes, and nudge the stagnant proposal.</b> That is $28,500 within reach before the week ends.</div>
+  </div>
+
+  <footer>The brain thinks. The team works. You approve. · <b>Built by Daniel Paul · Purely Personal</b></footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  window.addEventListener('load',function(){
+    if(!window.gsap)return; gsap.registerPlugin(ScrollTrigger);
+    gsap.from('.ohead',{y:26,opacity:0,scale:.98,duration:.7,ease:'power3.out'});
+    gsap.from('.ohead h1',{y:14,opacity:0,duration:.7,delay:.12,ease:'power3.out'});
+    gsap.from('.card,.stat,.dm-draft,.note',{y:20,opacity:0,duration:.55,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:'.doc',start:'top 85%'}});
+    gsap.utils.toArray('.count').forEach(function(el){
+      var to=+el.dataset.to,o={v:0};
+      gsap.to(o,{v:to,duration:1.4,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%'},onUpdate:function(){el.textContent=Math.round(o.v).toLocaleString();}});
+    });
+    gsap.utils.toArray('.bar i').forEach(function(el){
+      gsap.to(el,{width:el.dataset.pct||'75%',duration:1.4,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 94%'}});
+    });
+  });
+</script>
+</body>
+</html>

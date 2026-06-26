@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tony Taslim — Brand OS · Purely Personal</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Brand palette (client-supplied, Q18): Ink Charcoal #16302B · Deep Teal #0F6E56 (primary) · Signal Amber #BA7517 · Warm Paper #F7F5EF. Fonts: Playfair Display + Poppins, confirmed by client. v2 · 17 June 2026 -->
+<style>
+  :root {
+    --primary:#0F6E56; --primary-dark:#0D5E49; --primary-light:#3F8B78; --primary-rgb:15,110,86;
+    --accent:#BA7517; --accent-rgb:186,117,23; --ink:#16302B; --paper:#F7F5EF;
+    --bg-page:#0A0E0C; --bg-card:#111815; --bg-card-2:#16201C; --bg-card-3:#1C2823;
+    --border:rgba(255,255,255,0.07); --border-bright:rgba(255,255,255,0.12);
+    --text-primary:#FFFFFF; --text-secondary:rgba(255,255,255,0.60); --text-muted:rgba(255,255,255,0.30);
+    --r-sm:8px; --r-md:16px; --r-lg:24px; --r-pill:9999px;
+    --shadow-primary:0 8px 32px rgba(var(--primary-rgb),0.35);
+    --font-display:'Playfair Display',Georgia,serif; --font-body:'Poppins',system-ui,sans-serif; --font-mono:'DM Mono',monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body);background:var(--bg-page);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg-card);}::-webkit-scrollbar-thumb{background:rgba(var(--primary-rgb),0.45);border-radius:3px;}
+  ::selection{background:rgba(var(--primary-rgb),0.35);}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+  .cover{min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;background:radial-gradient(ellipse 70% 55% at 50% 32%,rgba(var(--primary-rgb),0.16) 0%,transparent 70%);}
+  .cover__inner{max-width:760px;}
+  .cover__brand{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--primary-light);margin-bottom:28px;display:flex;gap:10px;align-items:center;justify-content:center;}
+  .cover__brand-dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px rgba(var(--accent-rgb),0.7);}
+  .cover__name{font-family:var(--font-display);font-size:clamp(44px,8vw,76px);font-weight:900;letter-spacing:-0.03em;line-height:1.02;}
+  .cover__biz{font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:700;color:var(--primary-light);margin-top:6px;}
+  .cover__tag{font-size:17px;color:var(--text-primary);margin-top:26px;line-height:1.5;font-weight:500;}
+  .cover__tag b{color:var(--accent);font-weight:600;}
+  .cover__subtitle{font-size:14px;color:var(--text-secondary);margin-top:18px;letter-spacing:0.02em;}
+  .cover__date{font-family:var(--font-mono);font-size:12px;color:var(--text-muted);margin-top:8px;}
+  .cover__pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:34px;}
+  .pill{font-size:12px;font-weight:600;letter-spacing:0.04em;color:var(--text-secondary);background:var(--bg-card-2);border:1px solid var(--border-bright);border-radius:var(--r-pill);padding:8px 18px;}
+  .tabs{position:sticky;top:0;z-index:20;background:rgba(10,14,12,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .tabs__inner{max-width:920px;margin:0 auto;display:flex;gap:4px;padding:10px 18px;overflow-x:auto;}
+  .tab{font-family:var(--font-body);font-size:13px;font-weight:600;color:var(--text-secondary);background:transparent;border:none;padding:11px 18px;border-radius:var(--r-md);cursor:pointer;white-space:nowrap;transition:background .2s,color .2s;}
+  .tab:hover{color:var(--text-primary);}
+  .tab--active{color:#fff;background:var(--primary);box-shadow:var(--shadow-primary);}
+  .tab-panel{padding:56px 0 40px;}
+  .tab-panel[hidden]{display:none;}
+  .doc-head{margin-bottom:36px;}
+  .doc-label{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+  .doc-title{font-family:var(--font-display);font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-0.02em;line-height:1.08;}
+  .sec-label{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary-light);margin:40px 0 16px;}
+  .sec-label:first-child{margin-top:0;}
+  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:26px 30px;margin-bottom:16px;}
+  .card__label{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary-light);margin-bottom:10px;}
+  .card__title{font-family:var(--font-display);font-size:21px;font-weight:700;margin-bottom:12px;line-height:1.25;}
+  .card__body{font-size:15px;line-height:1.75;color:var(--text-secondary);}
+  .card__body strong{color:var(--text-primary);font-weight:600;}
+  .card__body p{margin-bottom:12px;}.card__body p:last-child{margin-bottom:0;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:640px){.grid-2{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin-bottom:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;}
+  th,td{text-align:left;padding:14px 20px;font-size:14px;line-height:1.6;border-bottom:1px solid var(--border);vertical-align:top;}
+  th{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary-light);background:var(--bg-card-2);}
+  tr:last-child td{border-bottom:none;}
+  td:first-child{color:var(--text-primary);font-weight:600;width:34%;}
+  td:last-child{color:var(--text-secondary);}
+  .statement{background:linear-gradient(135deg,rgba(var(--primary-rgb),0.14),rgba(var(--accent-rgb),0.06));border:1px solid rgba(var(--primary-rgb),0.3);border-radius:var(--r-lg);padding:26px 30px;margin-bottom:16px;}
+  .statement__label{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+  .statement__text{font-family:var(--font-display);font-size:19px;font-weight:700;line-height:1.45;color:#fff;}
+  .statement__text.small{font-size:16px;font-weight:600;font-family:var(--font-body);line-height:1.6;}
+  .inline-quote{color:var(--primary-light);font-style:italic;}
+  .pillar{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--primary);border-radius:0 var(--r-md) var(--r-md) 0;padding:22px 26px;margin-bottom:14px;}
+  .pillar__belief{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:14px;line-height:1.3;}
+  .pillar__row{font-size:14px;line-height:1.65;color:var(--text-secondary);margin-bottom:7px;}
+  .pillar__row span{color:var(--primary-light);font-weight:600;}
+  .step{display:flex;gap:18px;margin-bottom:16px;}
+  .step__num{flex:none;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;font-family:var(--font-display);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-primary);}
+  .step__body{padding-top:2px;}
+  .step__title{font-weight:700;font-size:16px;margin-bottom:6px;}
+  .step__text{font-size:14px;line-height:1.7;color:var(--text-secondary);}
+  .hook-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:640px){.hook-cols{grid-template-columns:1fr;}}
+  .hook-col__head{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;}
+  .hook-col__head.pos{color:var(--primary-light);}.hook-col__head.neg{color:var(--accent);}
+  .hook{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px;line-height:1.55;color:var(--text-secondary);}
+  .hook:last-child{border-bottom:none;}
+  .hook__n{font-family:var(--font-mono);font-size:12px;color:var(--text-muted);flex:none;}
+  .ladder{counter-reset:rung;}
+  .rung{display:flex;gap:16px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-md);padding:16px 20px;margin-bottom:10px;}
+  .rung__n{flex:none;width:30px;height:30px;border-radius:8px;background:var(--bg-card-3);color:var(--primary-light);font-family:var(--font-mono);font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .rung__b{font-size:14px;line-height:1.6;color:var(--text-secondary);}
+  .rung__b b{color:var(--text-primary);font-weight:600;}
+  .rung__price{color:var(--accent);font-weight:600;font-family:var(--font-mono);font-size:13px;}
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px;}
+  @media(max-width:640px){.swatches{grid-template-columns:1fr 1fr;}}
+  .swatch{border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;background:var(--bg-card);}
+  .swatch__chip{height:84px;}
+  .swatch__meta{padding:12px 14px;}
+  .swatch__role{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);}
+  .swatch__name{font-size:13px;font-weight:600;margin:3px 0;}
+  .swatch__hex{font-family:var(--font-mono);font-size:12px;color:var(--primary-light);}
+  .note{font-size:13px;color:var(--text-muted);font-style:italic;margin-top:6px;}
+  footer{padding:36px 24px;border-top:1px solid var(--border);margin-top:70px;}
+  .footer__inner{max-width:920px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer__brand{font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--primary-light);}
+  .footer__by{font-size:13px;color:var(--text-muted);margin-left:10px;}
+  .footer__meta{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="cover__inner">
+    <div class="cover__brand"><span class="cover__brand-dot"></span> Business Authority Foundation · Purely Personal</div>
+    <h1 class="cover__name">Tony Taslim</h1>
+    <div class="cover__biz">Efficient Business Solutions</div>
+    <p class="cover__tag">Most consultants fix one department.<br><b>I fix the structure under your whole business.</b></p>
+    <p class="cover__subtitle">Complete Brand Strategy · v2</p>
+    <p class="cover__date">17 June 2026</p>
+    <div class="cover__pills">
+      <span class="pill">ICP</span><span class="pill">Messaging</span><span class="pill">Rule of 1</span><span class="pill">Positioning</span><span class="pill">Business Inbox</span>
+    </div>
+  </div>
+</section>
+
+<nav class="tabs">
+  <div class="tabs__inner">
+    <button class="tab tab--active" data-tab="icp">ICP</button>
+    <button class="tab" data-tab="messaging">Messaging</button>
+    <button class="tab" data-tab="rule1">Rule of 1</button>
+    <button class="tab" data-tab="positioning">Positioning</button>
+    <button class="tab" data-tab="inbox">Business Inbox</button>
+  </div>
+</nav>
+
+<!-- ICP -->
+<section id="icp" class="tab-panel">
+  <div class="wrap">
+    <div class="doc-head"><div class="doc-label">Ideal Customer Profile</div><h2 class="doc-title">The mid-market leader carrying enterprise-scale risk</h2></div>
+
+    <div class="sec-label">Section 1 · Business Snapshot</div>
+    <table class="reveal">
+      <tr><td>Role</td><td>Founder and independent operational resilience advisor, Efficient Business Solutions</td></tr>
+      <tr><td>Niche</td><td>Operational resilience and structural risk for mid-market professional and financial services firms</td></tr>
+      <tr><td>Who they serve</td><td>COOs, CFOs and CEOs of founder-led firms, $10M to $100M revenue, 25 to 250 staff</td></tr>
+      <tr><td>Core offer</td><td>THRIVE method, extended through S-Architecture (Scale, Secure, Sustain, Shield), adjacent risk offers, and a Fractional Resilience Advisor retainer</td></tr>
+      <tr><td>Mission</td><td>Bring enterprise-grade structural resilience to mid-market firms, so operational fragility stops being a hidden commercial risk</td></tr>
+      <tr><td>Primary outcome</td><td>The business operates dependably under pressure: lower risk, faster recovery, protected margin, and a clean board answer on recovery</td></tr>
+    </table>
+
+    <div class="sec-label">Section 2 · Ideal Client Profile</div>
+    <table class="reveal">
+      <tr><td>Who they are</td><td>A senior leader (COO, CFO or CEO) of a founder-led firm whose growth has outpaced its structure</td></tr>
+      <tr><td>Business stage</td><td>$10M to $100M revenue, 25 to 250 staff. Risk now sits in the gaps between teams and tools</td></tr>
+      <tr><td>Decision maker</td><td>COO, CFO or CEO. Often the founder still carries the business personally</td></tr>
+      <tr><td>Geography</td><td>Melbourne metropolitan first, then Australia and New Zealand capital cities and regional centres, then English-speaking South-East Asian cities. Offshore reach is live now</td></tr>
+      <tr><td>Budget range</td><td>Free diagnostic and review. ~$1,000 per leader for the Executive Breakthrough. THRIVE Phase 1 (Track + Horizon, entry) ~$20k to $25k, then Phase 2 (R.I.V.E) $50k to $200k by structure and complexity. $10k per month retainer</td></tr>
+      <tr><td>Where they are</td><td>LinkedIn (search Tony Taslim), borediagnostic.com.au, efficientbusiness.solutions</td></tr>
+    </table>
+
+    <div class="sec-label">Section 3 · The Core Problem (Operational Fragility, Five Risks)</div>
+    <div class="card reveal"><div class="card__body">
+      <p><strong>Governance.</strong> Risk is managed in silos, with no single structural view. Gaps snowball.</p>
+      <p><strong>Data integrity.</strong> The numbers the business runs on are not trusted or not consistent.</p>
+      <p><strong>Key person dependency.</strong> Functions depend on individuals, often the founder. Owner-dependence sits here.</p>
+      <p><strong>Operational friction.</strong> Disconnected systems and ad-hoc process drain margin. Six tools cost more than one integrated one.</p>
+      <p><strong>Resilience.</strong> When a shock hits, the firm cannot recover fast. A small problem becomes a make-or-break event.</p>
+      <p><strong>Why they haven't solved it.</strong> Most advisors sell a brand or a single tool that does not fit, so risk goes up, not down. Nobody reads the whole structure, because the mid-market has no enterprise architect in the room.</p>
+    </div></div>
+
+    <div class="sec-label">Section 4 · What They Want Instead</div>
+    <div class="grid-2">
+      <div class="card reveal"><div class="card__label">Tangible</div><div class="card__body">A business that operates dependably under pressure. Fewer fire drills, faster recovery, protected margin, a clean board and audit answer.</div></div>
+      <div class="card reveal"><div class="card__label">Commercial</div><div class="card__body">Risk lowered and measured. Growth that holds. Confidence that one resignation or incident will not trigger a crisis.</div></div>
+      <div class="card reveal"><div class="card__label">Founder</div><div class="card__body">For the founder-CEO, a business that runs without them in every room, and the time that follows. This sits under key person dependency.</div></div>
+      <div class="card reveal"><div class="card__label">Identity</div><div class="card__body">A leader running an enterprise-grade structure, not a fragile one held together by effort.</div></div>
+    </div>
+
+    <div class="sec-label">Section 5 · What Frustrates Them About Other Options</div>
+    <table class="reveal">
+      <tr><th>Frustration</th><th>Why it matters</th></tr>
+      <tr><td>Brand-led software that does not fit their people, culture and processes</td><td>The tool gets bought, nothing sticks, and risk goes up, not down</td></tr>
+      <tr><td>Single-department fixes that ignore the structure around them</td><td>The real risk sits between teams, so a point fix leaves the fragility in place</td></tr>
+      <tr><td>Risk managed in silos by IT, finance and operations separately</td><td>No single view, so governance gaps go unseen until they become incidents</td></tr>
+      <tr><td>Solutions chosen on brand name rather than fit</td><td>They pay for the badge, not the result, and the business carries the gap</td></tr>
+    </table>
+
+    <div class="sec-label">Section 6 · Behavioural &amp; Decision Insights</div>
+    <table class="reveal">
+      <tr><td>Buying triggers</td><td>Growth has outpaced structure, a near-miss or incident, board or audit pressure, or just after starting or finishing a technology project</td></tr>
+      <tr><td>Emotional drivers</td><td>Fear of a hidden risk surfacing, desire for control and a clean board answer, and for the founder, the pull of freedom and time</td></tr>
+      <tr><td>Common objections</td><td>Timing (often mid-project), budget (not approved, so delayed or cancelled), and a different management direction or priority</td></tr>
+      <tr><td>Decision speed</td><td>Typically one to two weeks after the Business Resilience Review session</td></tr>
+      <tr><td>Trust factors</td><td>A national telecommunications transformation at Alcatel-Lucent with integrated systems valued above $100M, senior systems transformation at IBM, a Master of Finance, a 360 degree read across people, process, technology and risk, an independent stance, and 18 months of zero unplanned downtime at an Australian manufacturer, where a balanced continuity plan cut $500,000 a year in service-contract cost</td></tr>
+    </table>
+
+    <div class="sec-label">Section 7 · ICP Persona Summary</div>
+    <div class="statement reveal"><div class="statement__text small">The ideal client is a COO, CFO or CEO of a founder-led professional or financial services firm between $10M and $100M, with 25 to 250 staff. The firm looks successful, but its growth has outpaced its structure. Risk is siloed, the numbers are not fully trusted, key functions depend on individuals, and disconnected tools drain margin. They sense the fragility but cannot see the whole structure, because the firm has never had an enterprise architect. They want enterprise-grade resilience: a business that operates dependably, recovers fast, and answers the board with confidence.</div></div>
+
+    <div class="sec-label">Section 8 · Content Direction (Three Pillars)</div>
+    <table class="reveal">
+      <tr><td>Pillar 1</td><td>Operational Fragility as Commercial Risk. One resignation from a governance crisis, and nobody has measured it</td></tr>
+      <tr><td>Pillar 2</td><td>The Enterprise Architect Gap. What a $100M enterprise gets that a $30M firm does not</td></tr>
+      <tr><td>Pillar 3</td><td>Resilience Over Growth. The board question: how fast can you recover</td></tr>
+      <tr><td>Proof they need</td><td>The Alcatel-Lucent $100M-plus transformation and IBM systems pedigree, the Master of Finance, the 360 degree view, and CFO-grade numbers such as 18 months of zero unplanned downtime</td></tr>
+      <tr><td>What to avoid</td><td>Technology buzzwords, single-tool pitches, growth-only promises</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- MESSAGING -->
+<section id="messaging" class="tab-panel" hidden>
+  <div class="wrap">
+    <div class="doc-head"><div class="doc-label">Messaging House</div><h2 class="doc-title">Enterprise structure, translated</h2></div>
+
+    <div class="sec-label">Foundation</div>
+    <div class="grid-2">
+      <div class="card reveal"><div class="card__label">The Central Tension</div><div class="card__body">The firm is growing, but its growth has outpaced its structure. Risk is siloed, the numbers are not fully trusted, key functions depend on individuals, and disconnected tools drain margin. The leader senses the fragility but cannot see the whole structure, because the mid-market has never had an enterprise architect.</div></div>
+      <div class="card reveal"><div class="card__label">The Unique Angle</div><div class="card__body">Tony led the largest national telecommunications transformation in the country at Alcatel-Lucent, with integrated systems valued above $100M, plus systems transformation at IBM, and brings that 360 degree structural view to mid-market firms nobody serves at that level. He reads people, process, technology and risk as one structure, then translates it into something a non-technical leader can run.</div></div>
+    </div>
+
+    <div class="sec-label">Unique Value Proposition</div>
+    <div class="statement reveal"><div class="statement__label">Short</div><div class="statement__text">Enterprise-grade resilience for mid-market firms, so fragility stops being a hidden risk.</div></div>
+    <div class="card reveal"><div class="card__label">Medium</div><div class="card__body">Tony Taslim brings IBM-grade enterprise architecture to $10M to $100M firms. He reads people, process, technology and risk as one structure, then translates it into a resilient operation a non-technical leader can run.</div></div>
+    <div class="card reveal"><div class="card__label">Long</div><div class="card__body">Efficient Business Solutions brings enterprise-grade structural resilience to mid-market professional and financial services firms. Most have no enterprise architect, so risk hides in the gaps between tools, teams and decisions. Tony reads the whole structure across people, process, technology and risk, the same way he led the largest national telecommunications transformation in the country at Alcatel-Lucent and architected systems at IBM, then translates it into one clear operation. The result is a firm that operates dependably under pressure, recovers fast, and answers the board with confidence.</div></div>
+    <p class="note">UVP test: a competitor cannot say this word for word. The IBM pedigree, the people-process-technology-risk view, and the translation into one-click simplicity are specific to Tony.</p>
+
+    <div class="sec-label">Messaging Pillars (mirror the content pillars)</div>
+    <div class="pillar reveal">
+      <div class="pillar__belief">1 · Operational Fragility as Commercial Risk</div>
+      <div class="pillar__row"><span>Belief:</span> fragility is not an IT problem, it is a commercial and governance risk nobody has measured.</div>
+      <div class="pillar__row"><span>Proof:</span> six disconnected systems cost more than one, and 18 months of zero unplanned downtime under audited governance shows measured risk.</div>
+      <div class="pillar__row"><span>In their words:</span> <span class="inline-quote">"Most consultants fix only systems. They are not looking at the other structural issues."</span></div>
+    </div>
+    <div class="pillar reveal">
+      <div class="pillar__belief">2 · The Enterprise Architect Gap</div>
+      <div class="pillar__row"><span>Belief:</span> the mid-market is run without the one role every large enterprise has, an architect who sees the whole structure.</div>
+      <div class="pillar__row"><span>Proof:</span> an Alcatel-Lucent national telecommunications transformation valued above $100M and an IBM systems transformation track record almost no mid-market rival can claim.</div>
+      <div class="pillar__row"><span>In their words:</span> <span class="inline-quote">"I do it right the first time, making a template. The first one is hard, the second and third are much easier."</span></div>
+    </div>
+    <div class="pillar reveal">
+      <div class="pillar__belief">3 · Resilience Over Growth</div>
+      <div class="pillar__row"><span>Belief:</span> growth used to be the scoreboard, and resilience is taking over.</div>
+      <div class="pillar__row"><span>Proof:</span> resilient firms adapt through tax, regulatory and market shocks, while fragile firms go to surgery.</div>
+      <div class="pillar__row"><span>In their words:</span> <span class="inline-quote">"Businesses will be judged on their ability to operate, not their ability to grow."</span></div>
+    </div>
+
+    <div class="sec-label">The Five Structural Risks &amp; Solutions</div>
+    <table class="reveal">
+      <tr><th>Risk</th><th>Solution &amp; the shift</th></tr>
+      <tr><td>Governance</td><td>A 360 degree read that puts risk into one structure. Shift: gaps closed before they become incidents.</td></tr>
+      <tr><td>Data integrity</td><td>Structure the systems so data is consistent. Shift: decisions on numbers the leader can stand behind.</td></tr>
+      <tr><td>Key person dependency</td><td>Build the structure so the firm runs without any one person. Shift: it holds when a key person, or the founder, steps away.</td></tr>
+      <tr><td>Operational friction</td><td>Integrate the structure. Shift: fewer fire drills and protected margin.</td></tr>
+      <tr><td>Resilience</td><td>Build resilience proven on enterprise systems. Shift: a small pivot instead of a make-or-break crisis.</td></tr>
+    </table>
+
+    <div class="sec-label">Emotional Landscape</div>
+    <div class="grid-2">
+      <div class="card reveal"><div class="card__label">Drives them to act</div><div class="card__body"><p><strong>Control:</strong> "I want to know my real exposure and answer the board."</p><p><strong>Achievement:</strong> "I want to grow without the structure cracking."</p><p><strong>Relief:</strong> "I want to stop running on luck and individuals."</p><p><strong>Freedom (founder):</strong> "I want a business that does not need me in every room."</p></div></div>
+      <div class="card reveal"><div class="card__label">Blocks them</div><div class="card__body"><p><strong>Fear:</strong> that looking closely surfaces a risk they cannot fix quickly.</p><p><strong>Resource:</strong> no approved budget, and timing mid-project.</p><p><strong>Belief:</strong> "If we work harder and buy the right tool, it holds."</p><p><strong>Timing:</strong> a different management priority pulls focus.</p></div></div>
+    </div>
+    <div class="statement reveal"><div class="statement__label">The Bridge</div><div class="statement__text small">Tony reads the whole structure at 360 degrees, names the fragility in commercial terms, and translates the fix into one clear operation. That moves the leader from managing risk in silos to running an enterprise-grade, resilient business.</div></div>
+
+    <div class="sec-label">Brand Voice &amp; Pull Quotes</div>
+    <table class="reveal">
+      <tr><th>Attribute</th><th>In practice</th></tr>
+      <tr><td>Direct</td><td>Names the structural truth. Do: "Fragility is a commercial risk." Don't: soft brochure questions.</td></tr>
+      <tr><td>Grounded</td><td>Speaks from architecting enterprise systems. Do: cite the Alcatel-Lucent transformation, the IBM pedigree, the Master of Finance, and the downtime record. Don't: generic thought-leadership.</td></tr>
+      <tr><td>Holistic</td><td>People, process, technology and risk as one. Do: name all four. Don't: pitch a single tool.</td></tr>
+      <tr><td>Translator</td><td>Complexity into one clear outcome. Do: explain it for a board. Don't: hide behind jargon.</td></tr>
+      <tr><td>Independent</td><td>Brand agnostic and fit-first. Do: choose on fit. Don't: lead with a vendor logo.</td></tr>
+    </table>
+    <div class="card reveal"><div class="card__label">Verbatim pull quotes (seed content)</div><div class="card__body">
+      <p><span class="inline-quote">"I do it right the first time, making a template, making it easy. The first one is hard, the second and third are much easier."</span></p>
+      <p><span class="inline-quote">"Most consultants fix only systems. They are not looking at the other structural issues."</span></p>
+      <p><span class="inline-quote">"Businesses will be judged on their ability to operate, not their ability to grow."</span></p>
+    </div></div>
+  </div>
+</section>
+
+<!-- RULE OF 1 -->
+<section id="rule1" class="tab-panel" hidden>
+  <div class="wrap">
+    <div class="doc-head"><div class="doc-label">Rule of 1</div><h2 class="doc-title">One avatar. One enemy. One outcome.</h2></div>
+
+    <div class="statement reveal"><div class="statement__label">The One Focus</div><div class="card__body" style="color:#fff">
+      <p><strong>One Avatar:</strong> the COO, CFO or CEO of a founder-led $10M to $100M firm whose growth has outpaced its structure.</p>
+      <p><strong>One Problem:</strong> operational fragility, structural risk hiding behind disconnected tools, siloed risk, and good people covering for the gaps where a system should be.</p>
+      <p><strong>One Solution:</strong> read the whole structure at 360 degrees across people, process, technology and risk, build enterprise-grade resilience, and translate it into one clear operation.</p>
+      <p><strong>One Outcome:</strong> a business that operates dependably under pressure, recovers fast, protects margin, and answers the board with confidence.</p>
+    </div></div>
+
+    <div class="sec-label">One Avatar · The Exposed Leader</div>
+    <div class="card reveal"><div class="card__body">
+      <p>They run, or help run, a founder-led professional or financial services firm between $10M and $100M, with 25 to 250 staff. From outside it looks successful. Inside, growth has outpaced the structure. Risk is siloed, the numbers are not fully trusted, key functions depend on individuals, and disconnected tools drain margin. They sense the exposure but cannot see the whole picture, because the firm has never had an enterprise architect.</p>
+      <p><strong>Turning point trigger:</strong> a near-miss, a board or audit question, or the quiet realisation that one resignation or one incident would tip the firm into crisis.</p>
+      <p><strong>Internal monologue:</strong> <span class="inline-quote">"We are bigger than we were, and somehow more fragile. Risk lives in the gaps between my teams, and no single person sees the whole thing. If the board asked how fast we could recover, I am not sure I could answer. I do not need another tool. I need someone who can see the entire structure."</span></p>
+    </div></div>
+
+    <div class="sec-label">One Problem · The Villain (Operational Fragility)</div>
+    <div class="card reveal"><div class="card__body">
+      <p>The villain is operational fragility. It wears five faces: governance, data integrity, key person dependency, operational friction, and resilience. Owner-dependence is one face of key person dependency, not the whole enemy.</p>
+      <p><strong>External:</strong> risk is siloed, the structure is disconnected, and the firm cannot recover fast.</p>
+      <p><strong>Internal:</strong> the leader feels exposed and unable to answer for the firm's real risk.</p>
+      <p><strong>Philosophical:</strong> a mid-market firm should not have to stay fragile simply because it cannot afford a full-time enterprise architect.</p>
+    </div></div>
+    <div class="statement reveal"><div class="statement__label">Villain Statement</div><div class="statement__text">The real problem is operational fragility, which shows up as siloed risk and disconnected systems, makes the leader feel exposed and unable to answer the board, and represents the unfair truth that the mid-market manages enterprise-scale risk without enterprise-scale help.</div></div>
+
+    <div class="sec-label">One Solution · 3-Step Plan</div>
+    <div class="step reveal"><div class="step__num">1</div><div class="step__body"><div class="step__title">See the whole structure</div><div class="step__text">Tony reads the firm at 360 degrees across people, process, technology and risk, the way he architected enterprise systems at IBM. The leader sees the fragility named in commercial terms.</div></div></div>
+    <div class="step reveal"><div class="step__num">2</div><div class="step__body"><div class="step__title">Build enterprise-grade resilience</div><div class="step__text">The THRIVE method fixes the structure, not the surface, and fits it to the people and process already there. Risk moves out of silos into one connected design.</div></div></div>
+    <div class="step reveal"><div class="step__num">3</div><div class="step__body"><div class="step__title">Translate it into one operation</div><div class="step__text">Tony translates the structure into something a non-technical leader can run. S-Architecture and adjacent offers extend it, and the retainer keeps it sound over time.</div></div></div>
+
+    <div class="sec-label">One Outcome</div>
+    <div class="grid-2">
+      <div class="card reveal"><div class="card__label">Tangible</div><div class="card__body">A business that operates dependably under pressure, recovers fast, and protects margin.</div></div>
+      <div class="card reveal"><div class="card__label">Commercial</div><div class="card__body">Risk lowered and measured, growth that holds, and a clean board answer.</div></div>
+      <div class="card reveal"><div class="card__label">Identity</div><div class="card__body">A leader running an enterprise-grade structure, not a fragile one held together by effort.</div></div>
+    </div>
+
+    <div class="sec-label">The Deeper Emotional Foundation</div>
+    <div class="card reveal"><div class="card__body">Tony does not see systems as products. He sees them as something that has to work for the people behind them. He once helped a staff member who was carrying his family alone, working all week and driving Uber on weekends, caught napping at work and pulling back from the team. Tony built an incentive that turned hitting the goal into education credits and food for the family. The man got his focus back, became more productive, and rejoined the team. That is the lens: fix the structure, and the people behind it get their lives back.</div></div>
+
+    <div class="sec-label">14 Hooks</div>
+    <div class="hook-cols">
+      <div class="card reveal">
+        <div class="hook-col__head pos">Positive · Paint the win</div>
+        <div class="hook"><span class="hook__n">01</span> Picture answering the board's recovery question in one sentence, with proof.</div>
+        <div class="hook"><span class="hook__n">02</span> Get the enterprise architect a $100M firm has, without the $100M overhead.</div>
+        <div class="hook"><span class="hook__n">03</span> Run a firm that recovers from a shock in hours, not weeks.</div>
+        <div class="hook"><span class="hook__n">04</span> Eighteen months of zero unplanned downtime is not luck. It is structure.</div>
+        <div class="hook"><span class="hook__n">05</span> Turn risk from a silo nobody owns into one structure you control.</div>
+        <div class="hook"><span class="hook__n">06</span> Protect your margin by removing the friction tax you stopped noticing.</div>
+        <div class="hook"><span class="hook__n">07</span> Build it once, properly, so it runs without you in every room.</div>
+      </div>
+      <div class="card reveal">
+        <div class="hook-col__head neg">Negative · Call out the pain</div>
+        <div class="hook"><span class="hook__n">01</span> Your firm is one resignation away from a governance crisis, and nobody has measured it.</div>
+        <div class="hook"><span class="hook__n">02</span> Six disconnected systems cost you more than one integrated one.</div>
+        <div class="hook"><span class="hook__n">03</span> Your IT provider, accountant and consultant each see one slice. Nobody sees the whole.</div>
+        <div class="hook"><span class="hook__n">04</span> Growth made you bigger and more fragile at the same time.</div>
+        <div class="hook"><span class="hook__n">05</span> Risk managed in silos is risk nobody actually owns.</div>
+        <div class="hook"><span class="hook__n">06</span> The board will ask how fast you recover. Most leaders cannot answer.</div>
+        <div class="hook"><span class="hook__n">07</span> Buying the biggest brand is not the safe choice. The right fit is.</div>
+      </div>
+    </div>
+
+    <div class="sec-label">7-Part Brand Story</div>
+    <div class="card reveal"><div class="card__label">1 · A Character</div><div class="card__body">A COO, CFO or CEO of a founder-led firm between $10M and $100M. It looks healthy, but growth has outpaced its structure, and risk now lives in the gaps between teams and tools.</div></div>
+    <div class="card reveal"><div class="card__label">2 · Has a Problem</div><div class="card__body">Operational fragility. Risk is siloed, the numbers are not fully trusted, key functions depend on individuals, and disconnected tools drain margin. The leader feels exposed and cannot answer for the firm's real risk. It should not take enterprise-scale budget to get enterprise-scale safety.</div></div>
+    <div class="card reveal"><div class="card__label">3 · Meets a Guide</div><div class="card__body">Tony led the largest national telecommunications transformation in the country at Alcatel-Lucent, with integrated systems valued above $100M, ran systems transformation at IBM, and held an Australian manufacturer to zero unplanned downtime for 18 months under audited governance, cutting $500,000 a year in service-contract cost, where an outage would have cost around $50,000 an hour. He brings that structural view to the mid-market. He is the guide, not the hero.</div></div>
+    <div class="card reveal"><div class="card__label">4 · Who Gives Them a Plan</div><div class="card__body">First he reads the whole structure at 360 degrees across people, process, technology and risk. Then the THRIVE method builds enterprise-grade resilience. Finally he translates it into one operation, with S-Architecture, adjacent offers, and a retainer to keep it sound.</div></div>
+    <div class="card reveal"><div class="card__label">5 · And Calls Them to Action</div><div class="card__body"><p><strong>Direct CTA:</strong> book a THRIVE implementation and build enterprise-grade resilience.</p><p><strong>Transitional CTA:</strong> take the free BORe Diagnostic at borediagnostic.com.au and see how exposed your firm really is.</p></div></div>
+    <div class="card reveal"><div class="card__label">6 · That Helps Them Avoid Failure</div><div class="card__body">Without this, the fragility stays. Risk remains siloed, the firm stays one resignation or one incident from crisis, and the next shock becomes a make-or-break event instead of a small pivot. The cost is the margin, the board's confidence, and the business itself.</div></div>
+    <div class="card reveal"><div class="card__label">7 · And Ends in Success</div><div class="card__body">The firm operates dependably under pressure. Risk is named, measured and owned. Recovery is fast, margin is protected, and the board gets a clean answer. The leader runs an enterprise-grade structure with an architect behind it. Like the staff member who got his focus back once the structure around him was fixed, the whole firm gets steadier when the fragility is solved.</div></div>
+
+    <div class="sec-label">Why / Who / How</div>
+    <div class="card reveal"><div class="card__body"><p><strong>Why:</strong> the mid-market manages enterprise-scale risk without enterprise-scale help, and that fragility is a commercial risk nobody has measured.</p><p><strong>Who:</strong> the COO, CFO or CEO of a founder-led $10M to $100M professional or financial services firm.</p><p><strong>How:</strong> unlike advisors who sell a brand or a single tool, we read the whole structure at 360 degrees across people, process, technology and risk, then translate it into one operation a non-technical leader can run.</p></div></div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section id="positioning" class="tab-panel" hidden>
+  <div class="wrap">
+    <div class="doc-head"><div class="doc-label">Brand Positioning</div><h2 class="doc-title">The enterprise architect the mid-market never had</h2></div>
+
+    <div class="statement reveal"><div class="statement__label">Lead Tagline</div><div class="statement__text">Most consultants fix one department. I fix the structure under your whole business.</div></div>
+
+    <div class="sec-label">Core Positioning Territory</div>
+    <div class="card reveal"><div class="card__body">Tony Taslim is the enterprise architect for the mid-market, the independent advisor who fixes operational fragility across people, process, technology and risk for founder-led $10M to $100M firms, and translates it into a resilient operation the board can trust.</div></div>
+
+    <div class="sec-label">Category Definition</div>
+    <div class="grid-2">
+      <div class="card reveal"><div class="card__label">You are not</div><div class="card__body">An IT vendor, a software reseller, or a single-department consultant.</div></div>
+      <div class="card reveal"><div class="card__label">You operate as</div><div class="card__body">The enterprise architect for the mid-market, reading the whole structure across people, process, technology and risk.</div></div>
+    </div>
+
+    <div class="sec-label">Competitive Landscape</div>
+    <table class="reveal">
+      <tr><td>Who else is here</td><td>Big-name vendors, brand-led consultants, and the firm's existing IT provider, accountant and point consultants. Plus the option of doing nothing</td></tr>
+      <tr><td>What they offer</td><td>Brand-led solutions and single-slice views. Each sees one department. None reads the whole structure, and none brings enterprise architecture to a mid-market budget</td></tr>
+      <tr><td>The gap they leave</td><td>Nobody serves the mid-market with a 360 degree structural view across people, process, technology and risk, independent of brand, backed by genuine enterprise pedigree. That white space is Tony's</td></tr>
+    </table>
+
+    <div class="sec-label">Strategic Anchors</div>
+    <div class="grid-2">
+      <div class="card reveal"><div class="card__label">Frame of Reference</div><div class="card__body">Independent operational resilience and structural risk advisory for mid-market professional and financial services firms.</div></div>
+      <div class="card reveal"><div class="card__label">Point of Difference</div><div class="card__body">Enterprise architecture for the mid-market. An Alcatel-Lucent transformation valued above $100M and an IBM systems track record, a Master of Finance, a 360 degree view across people, process, technology and risk, then translated into one operation a non-technical leader can run. Independent and brand agnostic.</div></div>
+      <div class="card reveal"><div class="card__label">Point of Parity</div><div class="card__body">Credible systems and technology knowledge, a structured method, and real implementation, not just advice.</div></div>
+      <div class="card reveal"><div class="card__label">Strategic Sacrifice</div><div class="card__body">Not for firms below the band, not for quick-fix or single-tool buyers, and not for those who treat risk as one department's problem. Start-ups are out of scope.</div></div>
+    </div>
+
+    <div class="sec-label">Formal Positioning Statement</div>
+    <div class="statement reveal"><div class="statement__text small">For COOs, CFOs and CEOs of founder-led $10M to $100M firms whose growth has outpaced their structure, Tony Taslim is the enterprise architect for the mid-market that fixes operational fragility across people, process, technology and risk, unlike brand-led consultants and software resellers who each see one department, because he carries an Alcatel-Lucent $100M-plus transformation and IBM enterprise track record, with a Master of Finance, and translates it into one operation a non-technical leader can run.</div></div>
+
+    <div class="sec-label">Brand Architecture</div>
+    <table class="reveal">
+      <tr><td>Brand Promise</td><td>An enterprise-grade structure: a firm that operates dependably under pressure, recovers fast, and answers the board with confidence</td></tr>
+      <tr><td>Brand Essence</td><td>Enterprise structure, translated</td></tr>
+      <tr><td>Brand Archetype</td><td>The Sage as guide, with the Structural Translator as the working identity. Leads with enterprise-grade knowledge, then translates complexity into one clear outcome. Diagnoses before prescribing, and explains in business language, not technical language</td></tr>
+    </table>
+
+    <div class="sec-label">Offer Architecture · The Ladder</div>
+    <div class="ladder reveal">
+      <div class="rung"><div class="rung__n">1</div><div class="rung__b"><b>BORe Diagnostic.</b> Instant resilience report. <span class="rung__price">Free</span></div></div>
+      <div class="rung"><div class="rung__n">2</div><div class="rung__b"><b>Business Resilience Review.</b> Around 45 minutes. <span class="rung__price">Free</span></div></div>
+      <div class="rung"><div class="rung__n">3</div><div class="rung__b"><b>Executive Breakthrough Session.</b> Private 1:1, unlimited leaders. <span class="rung__price">~$1,000 / leader</span></div></div>
+      <div class="rung"><div class="rung__n">4</div><div class="rung__b"><b>THRIVE Implementation.</b> Two phases. Phase 1 (Track + Horizon), the entry, ~$20k to $25k. Phase 2 (R.I.V.E), by structure and complexity. <span class="rung__price">P1 ~$20k–25k · P2 $50k–200k</span></div></div>
+      <div class="rung"><div class="rung__n">5</div><div class="rung__b"><b>S-Architecture.</b> Scale, Secure, Sustain, Shield. <span class="rung__price">Continuation</span></div></div>
+      <div class="rung"><div class="rung__n">6</div><div class="rung__b"><b>Adjacent offers.</b> Sector diagnostics, capital resilience, succession risk, vendor fit audits. <span class="rung__price">Continuation</span></div></div>
+      <div class="rung"><div class="rung__n">7</div><div class="rung__b"><b>Fractional Resilience Advisor.</b> Retained advisory capacity, not software, hired like a board adviser or fractional CFO. Ongoing board-level advisory. <span class="rung__price">$10k / month</span></div></div>
+    </div>
+
+    <div class="sec-label">Tagline Options</div>
+    <table class="reveal">
+      <tr><th>Type</th><th>Option</th></tr>
+      <tr><td>Lead (recommended)</td><td>Most consultants fix one department. I fix the structure under your whole business.</td></tr>
+      <tr><td>Category-owning</td><td>The enterprise architect your mid-market firm never had.</td></tr>
+      <tr><td>Differentiation</td><td>Not the brand. The right fit. · People, process, technology, risk. All four, as one.</td></tr>
+      <tr><td>Transformation</td><td>Fragile success to durable control. · Operate dependably under pressure.</td></tr>
+    </table>
+
+    <div class="sec-label">Strategic Do's and Don'ts</div>
+    <div class="grid-2">
+      <div class="card reveal"><div class="card__label" style="color:var(--primary-light)">Do</div><div class="card__body"><p>Lead with enterprise architecture for the mid-market, the Alcatel-Lucent $100M-plus transformation, the IBM pedigree, and the Master of Finance.</p><p>Frame fragility as a commercial and governance risk.</p><p>Present people, process, technology and risk as one structure.</p><p>Translate everything into board-level business language.</p><p>Stay independent and brand agnostic.</p></div></div>
+      <div class="card reveal"><div class="card__label" style="color:var(--accent)">Don't</div><div class="card__body"><p>Position as an IT vendor or single-tool fix.</p><p>Sell single-department engagements when risk sits in the structure.</p><p>Treat the IBM pedigree as background.</p><p>Compete on technology buzzwords.</p><p>Chase firms below the band, or start-ups.</p></div></div>
+    </div>
+
+    <div class="sec-label">The Strategic Enemy</div>
+    <div class="statement reveal"><div class="statement__text">Tony's true opponent is operational fragility and the belief that buys a brand or a single tool to solve it. Not a competitor, but the assumption that a fragile mid-market firm can stay safe without ever seeing its whole structure.</div></div>
+
+    <div class="sec-label">Positioning Narrative</div>
+    <div class="card reveal"><div class="card__body">Tony Taslim exists because mid-market firms carry enterprise-scale risk without enterprise-scale help. Their growth has outpaced their structure, risk sits in silos, and the advice they buy is brand-led and sees one department at a time. Tony believes fragility is a commercial risk that has to be seen as one connected structure across people, process, technology and risk. Unlike consultants who fix the department in front of them, Tony fixes the structure beneath all of them, then translates it into one operation a non-technical leader can run. That makes him the enterprise architect for the mid-market, proven by an Alcatel-Lucent national telecommunications transformation valued above $100M, an IBM systems track record, and 18 months of zero unplanned downtime at an Australian manufacturer, where a balanced continuity plan cut $500,000 a year in service-contract cost and an outage would have cost around $50,000 an hour.</div></div>
+  </div>
+</section>
+
+<!-- BUSINESS INBOX -->
+<section id="inbox" class="tab-panel" hidden>
+  <div class="wrap">
+    <div class="doc-head"><div class="doc-label">Business Inbox</div><h2 class="doc-title">The factual record</h2></div>
+
+    <div class="sec-label">Section 1 · Business Foundation</div>
+    <table class="reveal">
+      <tr><td>Business name</td><td>Efficient Business Solutions</td></tr>
+      <tr><td>What they do</td><td>Brings enterprise-grade structural resilience to mid-market professional and financial services firms. Reads people, process, technology and risk as one structure, fixes operational fragility, and translates it into a dependable operation</td></tr>
+      <tr><td>Stage</td><td>Established advisory practice with a defined method, a live diagnostic, and a full ladder through to an ongoing retainer</td></tr>
+      <tr><td>Markets</td><td>Based in Melbourne. Melbourne metro first, then AU and NZ capital cities and regional centres, then English-speaking South-East Asian cities. Offshore reach is live now, including a delivered digital transformation in Indonesian manufacturing</td></tr>
+      <tr><td>Clients</td><td>COOs, CFOs and CEOs of founder-led firms, $10M to $100M revenue, 25 to 250 staff</td></tr>
+      <tr><td>Revenue streams</td><td>Executive Breakthrough Sessions, THRIVE implementations, S-Architecture and adjacent offers, and the Fractional Resilience Advisor retainer. Diagnostic and review are free entry points</td></tr>
+    </table>
+
+    <div class="sec-label">Section 2 · Offer Inventory</div>
+    <div class="ladder reveal">
+      <div class="rung"><div class="rung__n">1</div><div class="rung__b"><b>BORe Diagnostic.</b> Online diagnostic, instant PDF resilience report, at borediagnostic.com.au. <span class="rung__price">Free · Active</span></div></div>
+      <div class="rung"><div class="rung__n">2</div><div class="rung__b"><b>Business Resilience Review.</b> Articulates the report and action points. Around 45 minutes. <span class="rung__price">Free · Active</span></div></div>
+      <div class="rung"><div class="rung__n">3</div><div class="rung__b"><b>Executive Breakthrough Session.</b> Private 1:1 to map leverage points. Unlimited leaders. <span class="rung__price">~$1,000/leader · Active</span></div></div>
+      <div class="rung"><div class="rung__n">4</div><div class="rung__b"><b>THRIVE Implementation.</b> Two phases. Phase 1 (Track + Horizon) is the entry, 6 to 8 weeks, ~$20k to $25k. Phase 2 (R.I.V.E: Require, Implement, Visualise, Engage), $50k to $200k by business structure and complexity. <span class="rung__price">P1 ~$20k–25k · P2 $50k–200k · Active</span></div></div>
+      <div class="rung"><div class="rung__n">5</div><div class="rung__b"><b>S-Architecture.</b> Scale (growth without proportional cost), Secure (cyber and data integrity), Sustain (preventing process decay), Shield (regulatory and market risk). <span class="rung__price">Continuation · Active</span></div></div>
+      <div class="rung"><div class="rung__n">6</div><div class="rung__b"><b>Adjacent offers.</b> Sector diagnostics (healthcare, construction), capital resilience, succession risk, vendor fit audits. <span class="rung__price">In build / rollout</span></div></div>
+      <div class="rung"><div class="rung__n">7</div><div class="rung__b"><b>Fractional Resilience Advisor.</b> Retained advisory capacity, not software, hired like a board adviser or fractional CFO. Ongoing board-level resilience advisory after a project. <span class="rung__price">$10k/month ($120k/yr) · Priority launch</span></div></div>
+    </div>
+    <div class="statement reveal"><div class="statement__label">Offer Flow</div><div class="statement__text small">BORe Diagnostic (free) → Business Resilience Review (free, ~45 min) → Executive Breakthrough Session (~$1,000/leader) → THRIVE Phase 1 (Track + Horizon, ~$20k to $25k) → THRIVE Phase 2 (R.I.V.E, $50k to $200k) → S-Architecture &amp; Adjacent Offers → Fractional Resilience Advisor retainer ($10k/month)</div></div>
+
+    <div class="sec-label">Section 3 · How Delivery Works</div>
+    <div class="card reveal"><div class="card__body"><p>The method is THRIVE: Track, Horizon, Require, Implement, Visualise, Engage.</p><p>1. Take the BORe Diagnostic for an instant PDF report. 2. The Business Resilience Review (around 45 minutes) articulates it and maps action points. 3. An Executive Breakthrough Session maps leverage points. 4. THRIVE implementation builds the resilience, beginning with Phase 1 (Track and Horizon) over six to eight weeks, then Phase 2 (R.I.V.E) at $50k to $200k by structure and complexity.</p><p>The work extends through <strong>S-Architecture</strong> (Scale, Secure, Sustain, Shield) and the <strong>adjacent offers</strong> (sector diagnostics, capital resilience, succession risk, vendor fit audits). The <strong>Fractional Resilience Advisor retainer</strong> keeps the structure sound over time.</p></div></div>
+
+    <div class="sec-label">Section 4 · Proof &amp; Credibility</div>
+    <div class="statement reveal"><div class="statement__label">Headline operational proof</div><div class="statement__text small">Australian manufacturer. Zero unplanned system downtime for 18 months straight, under strict audited governance across people, process and technology, where an outage would have cost around $50,000 per hour. A balanced business continuity plan strategy cut $500,000 a year in service-contract cost.</div></div>
+    <table class="reveal">
+      <tr><th>Pedigree</th><th>Detail</th></tr>
+      <tr><td>IBM enterprise</td><td>Senior architect on systems transformation, matched to people, process and the law in strict sectors like finance and aviation. The dollar-scale transformation is the Alcatel-Lucent work below</td></tr>
+      <tr><td>Telco</td><td>The largest telecommunications system transformation in the country, with integrated systems valued above $100M. The largest testing facility in the Southern Hemisphere, integrating state-of-the-art telecommunications equipment and showcasing 99.9999% resilience (around 30 seconds of downtime a year) to local and international audiences. Required to support emergency and other mission-critical services</td></tr>
+      <tr><td>Manufacturing</td><td>Recycling and paper, where downtime costs thousands of dollars a minute</td></tr>
+      <tr><td>Reach</td><td>10 large multinationals (500+ employees) and more than 20 SMEs (5 to 500 employees), across leisure, accounting, trading, point-of-sale, PR and media, education wholesale and small business</td></tr>
+    </table>
+    <div class="card reveal"><div class="card__label">Transformation case · Indonesian manufacturing</div><div class="card__body"><p>Designed, developed and delivered a digital transformation program, moving manual, repetitive, paper-based work to automated, systemised, digital processes.</p><p><strong>Leadership:</strong> near-instant decisions on real-time reporting. <strong>Finance:</strong> faster invoicing, eliminating 30-plus-day arrears. <strong>Production:</strong> just-in-time raw material supply, real-time inventory, minimised downtime, production up 25%. <strong>HR:</strong> removed 2 FTE of administration, freeing capacity for production.</p><p>Doubles as a live South-East Asia reference.</p></div></div>
+    <div class="card reveal"><div class="card__label">People case story</div><div class="card__body"><p><strong>Before:</strong> a staff member supporting his family alone, working all week and driving Uber on weekends, with no real rest. Caught napping during work hours and pulling back from the team.</p><p><strong>What was done:</strong> Tony built an incentive so hitting the goal earned a bonus directed to education credits and supermarket spending for the family.</p><p><strong>After:</strong> the staff member regained focus, became more productive, and took part with the team again. Around 2015 to 2016. No testimonial captured yet.</p></div></div>
+
+    <div class="sec-label">Section 5 · Business History</div>
+    <table class="reveal">
+      <tr><td>Career tiers</td><td>Technology involvement began in 1995 (volunteer, internship, unpaid). Paid and commercial IT career began in 2005. IT leadership career began in 2009. Roughly 30 years in technology, about 20 commercial, including the Alcatel-Lucent national telecommunications transformation valued above $100M and IBM enterprise architecture</td></tr>
+      <tr><td>How it started</td><td>Began in technology in 1995, then started the commercial IT career in 2005 at a five-person company serving leisure, accounting, trading, point-of-sale, PR and media</td></tr>
+      <tr><td>First offer / client</td><td>First offer was a Human Resource Management System (HRMS) covering onboarding, skills and leave administration, claiming back 30 to 50 productive working days a year. First client was a manufacturing company moving from manual, paper-based work to digitalised, automated work</td></tr>
+      <tr><td>Key pivots</td><td>Education wholesaler and small business (agility, patchwork), recycling and paper manufacturing (precision, downtime cost), telco (always-on systems), IBM (enterprise architecture, compliance, matched to people and process)</td></tr>
+      <tr><td>Where it is now</td><td>Independent advisory practice with the THRIVE method, the live BORe Diagnostic, and a ladder through to the Fractional Resilience Advisor retainer</td></tr>
+    </table>
+
+    <div class="sec-label">Section 6 · Visual Brand Identity</div>
+    <div class="swatches">
+      <div class="swatch reveal"><div class="swatch__chip" style="background:#16302B"></div><div class="swatch__meta"><div class="swatch__role">Anchor / Ink</div><div class="swatch__name">Ink Charcoal</div><div class="swatch__hex">#16302B</div></div></div>
+      <div class="swatch reveal"><div class="swatch__chip" style="background:#0F6E56"></div><div class="swatch__meta"><div class="swatch__role">Trust / Primary</div><div class="swatch__name">Deep Teal</div><div class="swatch__hex">#0F6E56</div></div></div>
+      <div class="swatch reveal"><div class="swatch__chip" style="background:#BA7517"></div><div class="swatch__meta"><div class="swatch__role">Accent</div><div class="swatch__name">Signal Amber</div><div class="swatch__hex">#BA7517</div></div></div>
+      <div class="swatch reveal"><div class="swatch__chip" style="background:#F7F5EF"></div><div class="swatch__meta"><div class="swatch__role">Neutral base</div><div class="swatch__name">Warm Paper</div><div class="swatch__hex">#F7F5EF</div></div></div>
+    </div>
+    <table class="reveal">
+      <tr><td>Colour usage</td><td>60% paper and ink, 30% teal, 10% Signal Amber</td></tr>
+      <tr><td>Heading font</td><td>Playfair Display</td></tr>
+      <tr><td>Body font</td><td>Poppins</td></tr>
+      <tr><td>Aesthetic</td><td>Authority, trust, high-value, irresistible</td></tr>
+      <tr><td>Website</td><td>efficientbusiness.solutions</td></tr>
+    </table>
+
+    <div class="sec-label">Section 7 · Online Presence</div>
+    <table class="reveal">
+      <tr><td>Website</td><td>efficientbusiness.solutions</td></tr>
+      <tr><td>Diagnostic site</td><td>borediagnostic.com.au</td></tr>
+      <tr><td>LinkedIn</td><td>Active, found by searching Tony Taslim</td></tr>
+      <tr><td>Other platforms</td><td>Additional social media presence planned</td></tr>
+      <tr><td>Content activity</td><td>Active. Long-form LinkedIn text posts, 1,500 to 2,500 characters</td></tr>
+    </table>
+
+    <div class="sec-label">Section 8 · Revenue &amp; Goals</div>
+    <table class="reveal">
+      <tr><td>Monthly revenue target</td><td>$40,000</td></tr>
+      <tr><td>Average offer price</td><td>THRIVE $50k to $200k (Phase 1 ~$20k to $25k). Executive Breakthrough ~$1,000/leader. Retainer $10k/month</td></tr>
+      <tr><td>Sample mix to target</td><td>Four retainers at $10k/month give a $40k recurring baseline, with THRIVE projects on top. Fewer retainers plus regular implementations also reach the number</td></tr>
+      <tr><td>Growth horizon (targets to validate)</td><td>12 months: ~$40k/month (~$480k/yr), the floor. 3 years: ~$150k/month (~$1.8M/yr) from ~8 retainers plus THRIVE Phase 2 projects and adjacent offers. 5 years: ~$300k/month (~$3.6M/yr) as category leader with an advisor bench across Melbourne, Sydney and Brisbane, productised diagnostics and book-driven inbound</td></tr>
+      <tr><td>Primary LinkedIn goal</td><td>Authority, trust and marketing</td></tr>
+      <tr><td>Timeline</td><td>Next three to twelve months for the items below</td></tr>
+    </table>
+
+    <div class="sec-label">Section 9 · Communication Guidelines</div>
+    <table class="reveal">
+      <tr><th>Context</th><th>Tone</th></tr>
+      <tr><td>LinkedIn posts</td><td>Direct, grounded, plain business language, the voice of an enterprise operator</td></tr>
+      <tr><td>Sales conversations</td><td>Diagnostic first, fragility framed as commercial risk, structure over single tools</td></tr>
+      <tr><td>Client onboarding</td><td>Structured around THRIVE, starting with Track and Horizon</td></tr>
+    </table>
+    <div class="grid-2">
+      <div class="card reveal"><div class="card__label">Language to use</div><div class="card__body">operational fragility, structural risk, enterprise architect, 360 degrees, people, process, technology, risk, governance, data integrity, key person dependency, operational friction, resilience, recover fast, protected margin, translate, fit.</div></div>
+      <div class="card reveal"><div class="card__label">Hard limits</div><div class="card__body">No single-department engagements when the risk sits in the structure. No solution chosen on brand name alone. Compatibility checked before delivery. No start-ups.</div></div>
+    </div>
+
+    <div class="sec-label">Section 10 · LinkedIn &amp; Content Priorities</div>
+    <table class="reveal">
+      <tr><td>LinkedIn goal</td><td>Authority, trust and marketing</td></tr>
+      <tr><td>Content pillars</td><td>1. Operational Fragility as Commercial Risk · 2. The Enterprise Architect Gap · 3. Resilience Over Growth</td></tr>
+      <tr><td>Formats</td><td>Long-form LinkedIn text posts, 1,500 to 2,500 characters. Book and additional social media presence planned</td></tr>
+      <tr><td>Posting status</td><td>Active. 1,500 to 2,500 character posts</td></tr>
+      <tr><td>Upcoming launches</td><td>Book, <em>From Fragile Success to Durable Control</em> · Fractional Resilience Advisor retainer · Sector diagnostics for healthcare and construction · Additional social media presence</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__inner">
+    <div><span class="footer__brand">Purely Personal</span><span class="footer__by">by Daniel Paul</span></div>
+    <span class="footer__meta">Business Authority Foundation · v2 · 17 June 2026</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab--active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.hidden = true);
+      tab.classList.add('tab--active');
+      document.getElementById(tab.dataset.tab).hidden = false;
+      window.scrollTo({ top: document.querySelector('.tabs').offsetTop - 1, behavior: 'instant' });
+      runReveal();
+    });
+  });
+  function runReveal() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => io.observe(el));
+  }
+  runReveal();
+</script>
+</body>
+</html>
