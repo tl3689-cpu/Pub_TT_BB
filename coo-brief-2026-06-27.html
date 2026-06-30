@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Morning Brief — June 27, 2026</title>
+<style>
+  :root {
+    --primary: #E8294C;
+    --primary-dim: rgba(232, 41, 76, 0.15);
+    --primary-glow: rgba(232, 41, 76, 0.4);
+    --bg: #0A0A0A;
+    --surface: #141414;
+    --surface-2: #1C1C1C;
+    --border: #2A2A2A;
+    --text: #F0F0F0;
+    --text-dim: #888888;
+    --text-muted: #555555;
+    --green: #22C55E;
+    --green-dim: rgba(34, 197, 94, 0.12);
+    --amber: #F59E0B;
+    --amber-dim: rgba(245, 158, 11, 0.12);
+    --red: #EF4444;
+    --red-dim: rgba(239, 68, 68, 0.12);
+    --blue: #3B82F6;
+    --blue-dim: rgba(59, 130, 246, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 32px 24px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-left h1 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+
+  .header-left h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .header-left .date-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  .header-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  .pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+  }
+
+  /* Grid layout */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .card-full { grid-column: 1 / -1; }
+
+  /* Card */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .card:hover { border-color: #3A3A3A; }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .card-title .icon {
+    font-size: 14px;
+  }
+
+  .card-count {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px 8px;
+  }
+
+  .card-body { padding: 16px 18px; }
+
+  /* Empty state */
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .empty-state .empty-icon {
+    font-size: 28px;
+    opacity: 0.4;
+  }
+
+  .empty-state p {
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .empty-state .empty-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+
+  /* Schedule items */
+  .schedule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .schedule-item:last-child { border-bottom: none; }
+
+  .schedule-time {
+    min-width: 72px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    padding-top: 1px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .schedule-info { flex: 1; }
+
+  .schedule-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+
+  .schedule-meta {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  /* Inbox items */
+  .inbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .inbox-item:last-child { border-bottom: none; }
+
+  .inbox-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .inbox-info { flex: 1; min-width: 0; }
+
+  .inbox-subject {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .inbox-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .inbox-badge {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+
+  .badge-info { background: var(--blue-dim); color: var(--blue); }
+  .badge-alert { background: var(--amber-dim); color: var(--amber); }
+  .badge-urgent { background: var(--red-dim); color: var(--red); }
+  .badge-ok { background: var(--green-dim); color: var(--green); }
+
+  /* Task items */
+  .task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .task-item:last-child { border-bottom: none; }
+
+  .task-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .status-green { background: var(--green); }
+  .status-amber { background: var(--amber); }
+  .status-red { background: var(--red); }
+  .status-blue { background: var(--blue); }
+  .status-muted { background: var(--text-muted); border: 1px solid var(--border); background: transparent; }
+
+  .task-name {
+    flex: 1;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .task-due {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .task-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--surface-2);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+
+  /* Content slot */
+  .content-slot {
+    background: var(--surface-2);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .content-slot .slot-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .content-slot .slot-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .content-slot .slot-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* Metric card */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .metric-item {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .metric-value {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .metric-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .metric-sub {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  .value-green { color: var(--green); }
+  .value-amber { color: var(--amber); }
+  .value-red { color: var(--red); }
+  .value-primary { color: var(--primary); }
+  .value-dim { color: var(--text-dim); }
+
+  /* Status bar */
+  .status-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .status-bar.on-track { background: var(--green-dim); color: var(--green); }
+  .status-bar.attention { background: var(--amber-dim); color: var(--amber); }
+  .status-bar.overdue { background: var(--red-dim); color: var(--red); }
+
+  /* Notice */
+  .notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--blue-dim);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: var(--blue);
+    margin-top: 12px;
+  }
+
+  .notice-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Footer */
+  .footer {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-left {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .footer-sources {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .source-chip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 7px;
+  }
+
+  .source-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-left">
+    <h1>COO Morning Brief</h1>
+    <h2>Friday, June 27, 2026</h2>
+    <div class="date-sub">Week 26 &nbsp;·&nbsp; Generated at 07:00 AEST</div>
+  </div>
+  <div class="header-badge">
+    <div class="pulse"></div>
+    Live pull &nbsp;·&nbsp; cio2hire@gmail.com
+  </div>
+</div>
+
+<!-- Main Grid -->
+<div class="grid">
+
+  <!-- TODAY'S SCHEDULE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">📅</span> Today's Schedule</div>
+      <div class="status-bar on-track">● Clear</div>
+    </div>
+    <div class="card-body">
+      <div class="empty-state">
+        <div class="empty-icon">🌅</div>
+        <div class="empty-label">No meetings scheduled</div>
+        <p>Your calendar is clear for June 27.<br>A great day for deep work.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INBOX PRIORITIES -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">📬</span> Inbox Priorities</div>
+      <div class="card-count">3 threads</div>
+    </div>
+    <div class="card-body">
+
+      <div class="inbox-item">
+        <div class="inbox-dot" style="background: var(--amber);"></div>
+        <div class="inbox-info">
+          <div class="inbox-subject">Security alert — New sign-in on POCO F6 Pro</div>
+          <div class="inbox-meta">no-reply@accounts.google.com &nbsp;·&nbsp; Jun 26, 12:42</div>
+        </div>
+        <div class="inbox-badge badge-alert">REVIEW</div>
+      </div>
+
+      <div class="inbox-item">
+        <div class="inbox-dot" style="background: var(--blue);"></div>
+        <div class="inbox-info">
+          <div class="inbox-subject">Claude connectors granted access (Gmail, Calendar, Drive)</div>
+          <div class="inbox-meta">no-reply@accounts.google.com &nbsp;·&nbsp; Jun 26, 12:02–12:03</div>
+        </div>
+        <div class="inbox-badge badge-info">INFO</div>
+      </div>
+
+      <div class="inbox-item">
+        <div class="inbox-dot" style="background: var(--text-muted);"></div>
+        <div class="inbox-info">
+          <div class="inbox-subject">Changes to purchase verification settings on Google Play</div>
+          <div class="inbox-meta">googleplay-noreply@google.com &nbsp;·&nbsp; Jun 26, 12:42</div>
+        </div>
+        <div class="inbox-badge badge-ok">UNREAD</div>
+      </div>
+
+      <div class="notice">
+        <div class="notice-icon">ℹ️</div>
+        <div>No business-critical emails flagged in the last 24 hours. Inbox clear of urgent / deadline items.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TASKS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">✅</span> Tasks</div>
+      <div class="status-bar attention">● Attention</div>
+    </div>
+    <div class="card-body">
+
+      <div class="task-item">
+        <div class="task-status-dot status-amber"></div>
+        <div class="task-name">2. E-commerce Platform Setup</div>
+        <div class="task-tag">Ecommerce</div>
+      </div>
+
+      <div class="task-item">
+        <div class="task-status-dot status-blue"></div>
+        <div class="task-name">1. Purchase Domain &amp; Hosting</div>
+        <div class="task-tag">Website</div>
+      </div>
+
+      <div class="task-item">
+        <div class="task-status-dot status-amber"></div>
+        <div class="task-name">Midnite Spin-off Business Plan</div>
+        <div class="task-tag">Project</div>
+      </div>
+
+      <div class="task-item">
+        <div class="task-status-dot status-blue"></div>
+        <div class="task-name">Free AI Agent (n8n / Streamlit)</div>
+        <div class="task-tag">Mobile</div>
+      </div>
+
+      <div class="notice">
+        <div class="notice-icon">🔒</div>
+        <div>Notion SQL queries require a Business plan. Task due dates and statuses shown above are approximated from workspace search. Upgrade to unlock full task tracking.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT SLOT -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">✍️</span> Content Slot</div>
+      <div class="status-bar attention">● Unscheduled</div>
+    </div>
+    <div class="card-body">
+      <div class="content-slot">
+        <div class="slot-label">Today · June 27</div>
+        <div class="slot-title">No content entry found</div>
+        <div class="slot-desc">No content calendar entry detected for today in Notion.<br>Consider posting a LinkedIn update, carousel, or short reel<br>to maintain your Friday cadence.</div>
+      </div>
+
+      <div style="margin-top: 12px;">
+        <div class="task-item">
+          <div class="task-status-dot status-muted"></div>
+          <div class="task-name" style="color: var(--text-dim);">Create social media content calendar</div>
+          <div class="task-tag">Notion</div>
+        </div>
+        <div class="task-item" style="border-bottom: none;">
+          <div class="task-status-dot status-muted"></div>
+          <div class="task-name" style="color: var(--text-dim);">LinkedIn — E-commerce or AI Agent topic</div>
+          <div class="task-tag">Suggested</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY METRICS -->
+  <div class="card card-full">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">📊</span> Key Metrics — Today's Snapshot</div>
+      <div class="status-bar on-track">● On Track</div>
+    </div>
+    <div class="card-body">
+      <div class="metric-grid">
+
+        <div class="metric-item">
+          <div class="metric-value value-green">0</div>
+          <div class="metric-label">Meetings Today</div>
+          <div class="metric-sub">Calendar clear — deep work available</div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-value value-amber">3</div>
+          <div class="metric-label">Inbox Threads</div>
+          <div class="metric-sub">All system alerts — 0 business-critical</div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-value value-primary">4</div>
+          <div class="metric-label">Active Projects</div>
+          <div class="metric-sub">E-commerce · AI Agent · Midnite · Domain</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-left">
+    COO Brief &nbsp;·&nbsp; Tony Taslim &nbsp;·&nbsp; 2026-06-27 &nbsp;·&nbsp; Auto-generated
+  </div>
+  <div class="footer-sources">
+    <div class="source-chip"><div class="source-dot"></div>Gmail</div>
+    <div class="source-chip"><div class="source-dot"></div>Google Calendar</div>
+    <div class="source-chip"><div class="source-dot"></div>Notion</div>
+  </div>
+</div>
+
+</body>
+</html>
