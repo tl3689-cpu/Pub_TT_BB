@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tony Taslim — Brand OS · Purely Personal</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<!-- Brand palette (client-supplied, Q18): Ink Charcoal #16302B · Deep Teal #0F6E56 (primary) · Signal Amber #BA7517 · Warm Paper #F7F5EF. Fonts: Playfair Display + Poppins, confirmed by client. v3 · 26 June 2026 -->
+<!-- Brand palette (client-supplied, Q18): Ink Charcoal #16302B · Deep Teal #0F6E56 (primary) · Signal Amber #BA7517 · Warm Paper #F7F5EF · Slate Teal #5E736B (derived mid-neutral, added for contrast/hierarchy). Fonts: Playfair Display + Poppins, confirmed by client. v4 · palette recalibration -->
 <style>
   :root {
     --primary:#0F6E56; --primary-dark:#0D5E49; --primary-light:#3F8B78; --primary-rgb:15,110,86;
-    --accent:#BA7517; --accent-rgb:186,117,23; --ink:#16302B; --paper:#F7F5EF;
+    --accent:#BA7517; --accent-rgb:186,117,23; --ink:#16302B; --paper:#F7F5EF; --neutral:#5E736B; --neutral-rgb:94,115,107;
     --bg-page:#0A0E0C; --bg-card:#111815; --bg-card-2:#16201C; --bg-card-3:#1C2823;
     --border:rgba(255,255,255,0.07); --border-bright:rgba(255,255,255,0.12);
     --text-primary:#FFFFFF; --text-secondary:rgba(255,255,255,0.60); --text-muted:rgba(255,255,255,0.30);
@@ -490,10 +490,11 @@
       <div class="swatch reveal"><div class="swatch__chip" style="background:#16302B"></div><div class="swatch__meta"><div class="swatch__role">Anchor / Ink</div><div class="swatch__name">Ink Charcoal</div><div class="swatch__hex">#16302B</div></div></div>
       <div class="swatch reveal"><div class="swatch__chip" style="background:#0F6E56"></div><div class="swatch__meta"><div class="swatch__role">Trust / Primary</div><div class="swatch__name">Deep Teal</div><div class="swatch__hex">#0F6E56</div></div></div>
       <div class="swatch reveal"><div class="swatch__chip" style="background:#BA7517"></div><div class="swatch__meta"><div class="swatch__role">Accent</div><div class="swatch__name">Signal Amber</div><div class="swatch__hex">#BA7517</div></div></div>
+      <div class="swatch reveal"><div class="swatch__chip" style="background:#5E736B"></div><div class="swatch__meta"><div class="swatch__role">Secondary / mid-neutral</div><div class="swatch__name">Slate Teal</div><div class="swatch__hex">#5E736B</div></div></div>
       <div class="swatch reveal"><div class="swatch__chip" style="background:#F7F5EF"></div><div class="swatch__meta"><div class="swatch__role">Neutral base</div><div class="swatch__name">Warm Paper</div><div class="swatch__hex">#F7F5EF</div></div></div>
     </div>
     <table class="reveal">
-      <tr><td>Colour usage</td><td>60% paper and ink, 30% teal, 10% Signal Amber</td></tr>
+      <tr><td>Colour usage</td><td>60% paper and ink, 30% teal, 10% Signal Amber. Slate Teal (#5E736B) carries all secondary text, borders and dividers, replacing opacity-based muted text (AA 4.66:1). Signal Amber is the single action colour — CTAs and key figures only, never body text (fails AA on paper at body size)</td></tr>
       <tr><td>Heading font</td><td>Playfair Display</td></tr>
       <tr><td>Body font</td><td>Poppins</td></tr>
       <tr><td>Aesthetic</td><td>Authority, trust, high-value, irresistible</td></tr>
