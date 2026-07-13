@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BUSINESS AUTHORITY FOUNDATION
-Brand Positioning (v3)
-Client: Tony Taslim · 26 June 2026
+Brand Positioning (v4)
+Client: Tony Taslim · 13 July 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # BRAND POSITIONING
@@ -18,7 +18,7 @@ Client: Tony Taslim · 26 June 2026
 ## CATEGORY DEFINITION
 
 You are not: an IT vendor, a software reseller, or a single-department consultant.
-You operate as: the enterprise architect for the mid-market, an independent advisor who reads the whole structure across people, process, technology and risk.
+You operate as: the enterprise architect for the mid-market, an independent, TOGAF-certified advisor who reads the whole structure across people, process, technology and risk.
 
 This shifts the category from: "business consultant" or "IT advisor"
 To: "the enterprise architect mid-market firms never had, who fixes operational fragility as a commercial risk."
@@ -45,10 +45,10 @@ Nobody is serving the mid-market with a 360 degree structural view across people
 **Frame of Reference:** Independent operational resilience and structural risk advisory for mid-market professional and financial services firms.
 
 **Point of Difference (POD):**
-Enterprise architecture for the mid-market. Tony has architected $50M to $100M systems at IBM and brings that same 360 degree view across people, process, technology and risk, then translates the structure into one operation a non-technical leader can run. Independent and brand agnostic, chosen on fit.
+Enterprise architecture for the mid-market. Tony led the largest national telecommunications transformation in the country at Alcatel-Lucent, with integrated systems valued above $100M, architected $50M to $100M systems at IBM, and holds a Master of Finance and TOGAF certification, the same architecture governance framework large enterprises rely on to keep structural decisions compliant and auditable. He brings that same 360 degree view across people, process, technology and risk, then translates the structure into one operation a non-technical leader can run. Independent and brand agnostic, chosen on fit.
 
 **Point of Parity (POP):**
-Credible systems and technology knowledge, a structured method, and real implementation, not just advice.
+Credible systems and technology knowledge grounded in a TOGAF-certified method, a structured method, and real implementation, not just advice.
 
 **Strategic Sacrifice:**
 Not for firms below the mid-market band, not for leaders who want a quick fix or a single tool, and not for those who treat risk as one department's problem. Start-ups are out of scope.
@@ -68,7 +68,7 @@ whose growth has outpaced their structure,
 Tony Taslim is the enterprise architect for the mid-market
 that fixes operational fragility across people, process, technology and risk,
 unlike brand-led consultants and software resellers who each see one department,
-because he carries a $50M to $100M IBM enterprise track record and translates it into one operation a non-technical leader can run.
+because he carries an Alcatel-Lucent $100M-plus telecommunications transformation and a $50M to $100M IBM enterprise track record, backed by a Master of Finance and TOGAF certification, and translates it into one operation a non-technical leader can run.
 
 ---
 
@@ -115,7 +115,7 @@ Why the lead tagline: it draws a clean line between a point fix and a structural
 ## STRATEGIC DO'S AND DON'TS
 
 **DO:**
-1. Lead with enterprise architecture for the mid-market and the IBM $50M to $100M pedigree.
+1. Lead with enterprise architecture for the mid-market, the Alcatel-Lucent $100M-plus transformation, the IBM pedigree, and the Master of Finance.
 2. Frame fragility as a commercial and governance risk, not an IT issue.
 3. Read and present people, process, technology and risk as one structure.
 4. Translate everything into business language a board understands.
@@ -124,7 +124,7 @@ Why the lead tagline: it draws a clean line between a point fix and a structural
 **DON'T:**
 1. Position as an IT vendor or a single-tool fix.
 2. Sell single-department engagements when the risk sits in the structure.
-3. Treat the IBM pedigree as background instead of the lead differentiator.
+3. Treat the Alcatel-Lucent or IBM pedigree as background instead of the lead differentiator.
 4. Compete on technology buzzwords.
 5. Chase firms below the band, or start-ups.
 
@@ -140,4 +140,4 @@ The enemy is the default thinking in the market: that more tools, the biggest na
 
 ## POSITIONING NARRATIVE
 
-Tony Taslim exists because mid-market firms carry enterprise-scale risk without enterprise-scale help. Their growth has outpaced their structure, risk sits in silos, and the advice they buy is brand-led and sees one department at a time. Tony believes fragility is a commercial risk that has to be seen as one connected structure across people, process, technology and risk. Unlike consultants who fix the department in front of them, Tony fixes the structure beneath all of them, then translates it into one operation a non-technical leader can run. That makes him the enterprise architect for the mid-market, proven by a $50M to $100M IBM track record and 18 months of zero unplanned downtime at an Australian manufacturer, where a balanced continuity plan cut $500,000 a year in service-contract cost and an outage would have cost around $50,000 an hour.
+Tony Taslim exists because mid-market firms carry enterprise-scale risk without enterprise-scale help. Their growth has outpaced their structure, risk sits in silos, and the advice they buy is brand-led and sees one department at a time. Tony believes fragility is a commercial risk that has to be seen as one connected structure across people, process, technology and risk. Unlike consultants who fix the department in front of them, Tony fixes the structure beneath all of them, then translates it into one operation a non-technical leader can run. That makes him the enterprise architect for the mid-market, proven by an Alcatel-Lucent national telecommunications transformation valued above $100M, a $50M to $100M IBM track record, a Master of Finance, and 18 months of zero unplanned downtime at an Australian manufacturer, where a balanced continuity plan cut $500,000 a year in service-contract cost and an outage would have cost around $50,000 an hour.

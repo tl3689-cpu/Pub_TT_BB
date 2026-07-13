@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BUSINESS AUTHORITY FOUNDATION
-ICP Document (v3)
-Client: Tony Taslim · 26 June 2026
+ICP Document (v4)
+Client: Tony Taslim · 13 July 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # IDEAL CUSTOMER PROFILE
@@ -86,7 +86,7 @@ They believe working harder is enough, and it is not. Most advisors sell a brand
 | Emotional Drivers | Fear of a hidden risk surfacing, desire for control and a clean board answer, and for the founder, the pull of freedom and time |
 | Common Objections | Timing (not the right time, often just started or finished a technology project), budget (management has not approved it, so the project is delayed or cancelled), and a different management direction or priority |
 | Decision Speed | Typically one to two weeks after the Business Resilience Review session |
-| Trust Factors | An IBM enterprise architecture track record on $50M to $100M systems, a 360 degree read across people, process, technology and risk, an independent and brand agnostic stance, and a record of zero unplanned downtime for 18 months at an Australian manufacturer, where a balanced continuity plan cut $500,000 a year in service-contract cost |
+| Trust Factors | A national telecommunications transformation at Alcatel-Lucent with integrated systems valued above $100M, senior systems transformation at IBM as a TOGAF-certified architect, a Master of Finance, a 360 degree read across people, process, technology and risk, an independent and brand agnostic stance, and a record of zero unplanned downtime for 18 months at an Australian manufacturer, where a balanced continuity plan cut $500,000 a year in service-contract cost |
 
 ---
 
@@ -104,5 +104,5 @@ What this profile tells us about the content strategy. Content runs on three pil
 - Pillar 2, The Enterprise Architect Gap: what a $100M enterprise gets that a $30M firm does not, and why their IT provider, accountant and consultant cannot see the whole business.
 - Pillar 3, Resilience Over Growth: growth used to be the scoreboard, and resilience is taking over. The board question every leader will face: how fast can you recover.
 - Tone that connects: direct, grounded, the voice of an operator who has architected enterprise systems and now brings that view to the mid-market.
-- Proof they need: the IBM $50M to $100M pedigree, the 360 degree structural view, and concrete numbers a CFO recognises, such as 18 months of zero unplanned downtime.
+- Proof they need: the Alcatel-Lucent $100M-plus transformation and IBM systems pedigree, the Master of Finance and TOGAF certification, the 360 degree structural view, and concrete numbers a CFO recognises, such as 18 months of zero unplanned downtime.
 - What to avoid: technology buzzwords, single-tool pitches, and growth-only promises.

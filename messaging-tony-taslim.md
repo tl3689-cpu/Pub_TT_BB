@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BUSINESS AUTHORITY FOUNDATION
-Messaging House (v3)
-Client: Tony Taslim · 26 June 2026
+Messaging House (v4)
+Client: Tony Taslim · 13 July 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # MESSAGING HOUSE
@@ -15,7 +15,7 @@ Client: Tony Taslim · 26 June 2026
 The firm is growing, but its growth has outpaced its structure. Risk is managed in silos, the numbers are not fully trusted, key functions depend on individuals, and disconnected tools drain margin. The leader senses the fragility but cannot see the whole structure, because the mid-market has never had an enterprise architect in the room.
 
 **The Unique Messaging Angle:**
-Tony has architected $50M to $100M enterprise systems at IBM, and now brings that same 360 degree structural view to mid-market firms nobody serves at that level. He reads people, process, technology and risk as one connected structure, then translates it into something a non-technical leader can run.
+Tony led the largest national telecommunications transformation in the country at Alcatel-Lucent, with integrated systems valued above $100M, and architected $50M to $100M enterprise systems at IBM, and now brings that same 360 degree structural view to mid-market firms nobody serves at that level. He reads people, process, technology and risk as one connected structure, then translates it into something a non-technical leader can run.
 
 ---
 
@@ -28,9 +28,9 @@ Enterprise-grade resilience for mid-market firms, so fragility stops being a hid
 Tony Taslim brings IBM-grade enterprise architecture to $10M to $100M firms. He reads people, process, technology and risk as one structure, then translates it into a resilient operation a non-technical leader can run.
 
 **Long (50-75 words):**
-Efficient Business Solutions brings enterprise-grade structural resilience to mid-market professional and financial services firms. Most have no enterprise architect, so risk hides in the gaps between tools, teams and decisions. Tony reads the whole structure across people, process, technology and risk, the same way he architected $50M to $100M systems at IBM, then translates it into one clear operation. The result is a firm that operates dependably under pressure, recovers fast, and answers the board with confidence.
+Efficient Business Solutions brings enterprise-grade structural resilience to mid-market professional and financial services firms. Most have no enterprise architect, so risk hides in the gaps between tools, teams and decisions. Tony reads the whole structure across people, process, technology and risk, the same way he led the largest national telecommunications transformation in the country at Alcatel-Lucent and architected systems at IBM, then translates it into one clear operation. The result is a firm that operates dependably under pressure, recovers fast, and answers the board with confidence.
 
-UVP test: Could a competitor say this word for word? No. The IBM enterprise pedigree, the 360 degree people-process-technology-risk view, and the translation into one-click simplicity are specific to Tony.
+UVP test: Could a competitor say this word for word? No. The Alcatel-Lucent and IBM enterprise pedigree, the 360 degree people-process-technology-risk view, and the translation into one-click simplicity are specific to Tony.
 
 ---
 
@@ -47,7 +47,7 @@ These mirror the three content pillars, so messaging and content stay aligned.
 ### Pillar 2: The Enterprise Architect Gap
 - The belief: the mid-market is run without the one role every large enterprise has, an architect who sees the whole structure.
 - Why it matters to the ideal client: their IT provider, accountant and consultant each see one slice, never the whole business.
-- Proof point: a $50M to $100M IBM enterprise architecture track record almost no mid-market rival can claim.
+- Proof point: an Alcatel-Lucent national telecommunications transformation valued above $100M, a $50M to $100M IBM enterprise architecture track record, and TOGAF certification, the same architecture governance standard large enterprises require, almost no mid-market rival can claim.
 - In their words: "I do it right the first time, making a template, making it easy. The first one is hard, the second and third are much easier."
 
 ### Pillar 3: Resilience Over Growth
@@ -111,7 +111,7 @@ Tony reads the whole structure at 360 degrees, names the fragility in commercial
 
 **Voice attributes:**
 - Direct: names the structural truth plainly. Do: "Fragility is a commercial risk." Don't: soft brochure questions.
-- Grounded: speaks from architecting enterprise systems. Do: cite the IBM pedigree and the downtime record. Don't: quote generic thought-leadership.
+- Grounded: speaks from architecting enterprise systems. Do: cite the Alcatel-Lucent transformation, the IBM pedigree, the Master of Finance, and the downtime record. Don't: quote generic thought-leadership.
 - Holistic: returns to people, process, technology and risk as one. Do: name all four. Don't: pitch a single tool.
 - Translator: turns complexity into one clear outcome. Do: explain it so a non-technical board gets it. Don't: hide behind jargon.
 - Independent: brand agnostic and fit-first. Do: choose on functionality and fit. Don't: lead with a vendor logo.
@@ -122,7 +122,7 @@ Tony reads the whole structure at 360 degrees, names the fragility in commercial
 - "Businesses will be judged on their ability to operate, not their ability to grow."
 
 **Words to use:**
-operational fragility, structural risk, enterprise architect, 360 degrees, people, process, technology, risk, governance, data integrity, key person dependency, operational friction, resilience, recover fast, protected margin, translate, fit.
+operational fragility, structural risk, enterprise architect, TOGAF-certified, 360 degrees, people, process, technology, risk, governance, data integrity, key person dependency, operational friction, resilience, recover fast, protected margin, translate, fit.
 
 **Words to avoid:**
 game-changer, unlock, revolutionise, disruptive, leverage, synergy, quick win, and any phrase that sounds like a brochure rather than an operator.

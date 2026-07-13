@@ -1,11 +1,13 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PERSONAL AUTHORITY FOUNDATION
 Personal Story Document
-Client: Tony Taslim · Finalised 19 June 2026
+Client: Tony Taslim · Finalised 19 June 2026 · Corrected 13 July 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # PERSONAL STORY DOCUMENT
 ## Tony Taslim
+
+*Correction note (13 July 2026): "Standing Their Ground" below previously framed the IBM departure as voluntary. It has been corrected to match the accurate account in the Career Pedigree Note and the Story Bank: the departure was an involuntary redundancy from IBM's restructuring in early 2014. The Raw Story Vault at the end of this document is preserved verbatim as originally recorded and has not been altered.*
 
 ---
 
@@ -46,7 +48,9 @@ It was my decision to blow all my savings to buy a car so that I could get a new
 The same thing happened after that. I moved on to a new position, a new industry with new people. I believed in the process again. There were no accidents, because that position elevated me further up the career ladder. I became more senior, I learned more, and I became better within my career, with my network and many other things.
 
 ### Standing Their Ground
-It was my decision to stop my working career and my last position at IBM, which I believe was the top of my career ladder, as an IT architect for IBM. I dealt with the latest and greatest system software possible, and I moved on to build my current business, which was a new thing. I started to learn how to do marketing and how to change my mindset. It grew me financially, emotionally, and relationship-wise, with new people. Initially I invested in myself and some business setup with quite a bit of money, around $100,000, but I think I recouped those investments, and the rest is history.
+It wasn't my decision to leave IBM. Early in 2014, I was told the business was restructuring and my contract wouldn't be renewed. That was the top of my career ladder, as an IT architect for IBM, dealing with the latest and greatest systems software, and it ended without me choosing it.
+
+What I did choose was what happened next. I'd already spent two years in personal development, learning marketing, finance, and how to change my mindset. When the redundancy came, I saw it as the moment, not the setback. There's no coincidence, everything comes with reason. That's how Efficient Business Solutions actually started. I invested in myself and the business setup, around $100,000, and I think I've recouped that many times over, and the rest is history.
 
 ---
 
@@ -103,8 +107,9 @@ On top of that, they feel more confident because they have support. They have th
 
 For brand and credential use, the enterprise pedigree reads as a layered record:
 
-- Alcatel-Lucent (now Nokia). Led the largest telecommunications system transformation in the country, with integrated systems valued above $100M. This is also the source of the 99.9999 percent resilience proof.
-- IBM. Senior architect on systems transformation in strict sectors such as finance and aviation, matched to people, process and the law.
+- Alcatel-Lucent (now Nokia). Led the largest telecommunications system transformation in the country, with integrated systems valued above $100M. This is also the source of the 99.999 percent resilience proof.
+- IBM. Senior architect on systems transformation in strict sectors such as finance and aviation, matched to people, process and the law. Contract ended in an involuntary redundancy in early 2014 as part of an IBM restructuring, not by Tony's choice.
+- TOGAF certified. One of the specialist certifications acquired alongside VMware, Solaris, Novell and Citrix during his IT career build, and the credential behind the architecture governance and compliance claims.
 - Server refresh transformation. The anchor case study: delivered around six months early, about 6M against a 21M budget, an 18-month plan completed in 9 to 10 months.
 - Master of Finance. The credential that earns a CFO's trust and supports the financial services positioning.
 
@@ -141,6 +146,8 @@ The same thing after that: I move on to the new position and it's just a new thi
 
 **Q7 — Standing Your Ground:**
 It was my decision to stop my working career and my last position in IBM, which I believe is at the top of my career ladder as an architect, IT architect for IBM. I dealt with the latest and greatest system software possible and I moved on to build my current business, which is a new thing. I'm starting to learn how to do marketing and how to change my mindsets. Just grew me financially, emotionally, and relationship-wise with new people. Initially I invested in myself and some business setup with actually quite a bit of money, around $100,000, but I think I recoup those investments and the rest is history.
+
+*(Note: this raw transcript answer is preserved as originally recorded. The polished "Standing Their Ground" narrative above has been corrected to reflect that the IBM departure was in fact an involuntary redundancy, not a voluntary decision — see the correction note at the top of this document and the Career Pedigree Note.)*
 
 **Q8 — The Moment You Knew:**
 It was my first job where on a day-to-day basis the first three months of my first work were just helping people with Microsoft Office and setting up emails and the website and many day-to-day simple things. After a while my manager taught me how to build the infrastructure, whether it is Microsoft-based or open-source-based. When I learned about open-source systems it just blew my mind and I was like wow, open-source systems can be similarly or sometimes much more resilient than the paid Microsoft one. I just clicked it's just wow. I'm fascinated that it just worked and people paid for it and people were happy with it. It's just much better in terms of ROI.

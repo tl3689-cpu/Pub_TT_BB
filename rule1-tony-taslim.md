@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BUSINESS AUTHORITY FOUNDATION
-Rule of 1 (v3)
-Client: Tony Taslim · 26 June 2026
+Rule of 1 (v4)
+Client: Tony Taslim · 13 July 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 # RULE OF 1
@@ -106,7 +106,7 @@ A COO, CFO or CEO of a founder-led firm between $10M and $100M. The firm looks h
 Operational fragility. Risk is siloed, the numbers are not fully trusted, key functions depend on individuals, and disconnected tools drain margin. The leader feels exposed and cannot answer for the firm's real risk. It should not take enterprise-scale budget to get enterprise-scale safety.
 
 ### 3. Meets a Guide
-Tony has architected $50M to $100M enterprise systems at IBM, and held an Australian manufacturer to zero unplanned downtime for 18 months under audited governance, cutting $500,000 a year in service-contract cost, where an outage would have cost around $50,000 an hour. He brings that same structural view to the mid-market. He is the guide, not the hero.
+Tony led the largest national telecommunications transformation in the country at Alcatel-Lucent, with integrated systems valued above $100M, architected $50M to $100M enterprise systems at IBM as a TOGAF-certified architect, holds a Master of Finance, and held an Australian manufacturer to zero unplanned downtime for 18 months under audited governance, cutting $500,000 a year in service-contract cost, where an outage would have cost around $50,000 an hour. He brings that same structural view to the mid-market. He is the guide, not the hero.
 
 ### 4. Who Gives Them a Plan
 First he reads the whole structure at 360 degrees across people, process, technology and risk. Then the THRIVE method builds enterprise-grade resilience. Finally he translates it into one clear operation, with S-Architecture, adjacent offers, and a retainer to keep it sound.
