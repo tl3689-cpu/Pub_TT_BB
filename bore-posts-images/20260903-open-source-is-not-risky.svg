@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<title>Choose on fit, not on the badge</title>
+<style>text{font-family:Arial,Helvetica,"Liberation Sans",sans-serif}</style>
+<rect x="0" y="0" width="1080" height="1350" fill="#F6F2E8"/>
+<rect x="0" y="0" width="1080" height="14" fill="#B8741A"/>
+<text x="72" y="92" font-size="22" font-weight="bold" fill="#B8741A">THE ENTERPRISE ARCHITECT GAP</text>
+<text x="72" y="150" font-size="60" font-weight="bold" fill="#14302A">Choose on fit, not on the badge</text>
+<text x="72" y="223.2" font-size="28" fill="#4A5A55">Five tests I apply to open-source, subscription and commercial.</text>
+<rect x="72" y="287.5" width="936" height="70" rx="14" fill="#14302A"/>
+<text x="436.3" y="333.5" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Open-source</text>
+<text x="665" y="333.5" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Subscription</text>
+<text x="893.6" y="333.5" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Commercial</text>
+<rect x="72" y="371.5" width="936" height="118" rx="14" fill="#FFFFFF" stroke="#D8D2BF" stroke-width="2"/>
+<text x="92" y="417.5" font-size="28" font-weight="bold" fill="#14302A">People</text>
+<text x="436.3" y="417.5" font-size="24" fill="#4A5A55" text-anchor="middle">Skills to run it?</text>
+<text x="665" y="417.5" font-size="24" fill="#4A5A55" text-anchor="middle">Easy to adopt?</text>
+<text x="893.6" y="417.5" font-size="24" fill="#4A5A55" text-anchor="middle">Training provided?</text>
+<rect x="72" y="501.5" width="936" height="118" rx="14" fill="#FFFFFF" stroke="#D8D2BF" stroke-width="2"/>
+<text x="92" y="547.5" font-size="28" font-weight="bold" fill="#14302A">Process</text>
+<text x="436.3" y="547.5" font-size="24" fill="#4A5A55" text-anchor="middle">Shapes to your</text>
+<text x="436.3" y="576.3" font-size="24" fill="#4A5A55" text-anchor="middle">flow</text>
+<text x="665" y="547.5" font-size="24" fill="#4A5A55" text-anchor="middle">Standard flow fits</text>
+<text x="893.6" y="547.5" font-size="24" fill="#4A5A55" text-anchor="middle">Heavy to change</text>
+<rect x="72" y="631.5" width="936" height="118" rx="14" fill="#FFFFFF" stroke="#D8D2BF" stroke-width="2"/>
+<text x="92" y="677.5" font-size="28" font-weight="bold" fill="#14302A">ROI over 3</text>
+<text x="92" y="709.8" font-size="28" font-weight="bold" fill="#14302A">years</text>
+<text x="436.3" y="677.5" font-size="24" fill="#4A5A55" text-anchor="middle">Low licence cost</text>
+<text x="665" y="677.5" font-size="24" fill="#4A5A55" text-anchor="middle">Predictable</text>
+<text x="665" y="706.3" font-size="24" fill="#4A5A55" text-anchor="middle">monthly</text>
+<text x="893.6" y="677.5" font-size="24" fill="#4A5A55" text-anchor="middle">Highest upfront</text>
+<rect x="72" y="761.5" width="936" height="118" rx="14" fill="#FFFFFF" stroke="#D8D2BF" stroke-width="2"/>
+<text x="92" y="807.5" font-size="28" font-weight="bold" fill="#14302A">Resilience</text>
+<text x="436.3" y="807.5" font-size="24" fill="#4A5A55" text-anchor="middle">Can match or beat</text>
+<text x="436.3" y="836.3" font-size="24" fill="#4A5A55" text-anchor="middle">paid</text>
+<text x="665" y="807.5" font-size="24" fill="#4A5A55" text-anchor="middle">Vendor holds</text>
+<text x="665" y="836.3" font-size="24" fill="#4A5A55" text-anchor="middle">uptime</text>
+<text x="893.6" y="807.5" font-size="24" fill="#4A5A55" text-anchor="middle">Strong if</text>
+<text x="893.6" y="836.3" font-size="24" fill="#4A5A55" text-anchor="middle">configured</text>
+<rect x="72" y="891.5" width="936" height="118" rx="14" fill="#FFFFFF" stroke="#D8D2BF" stroke-width="2"/>
+<text x="92" y="937.5" font-size="28" font-weight="bold" fill="#14302A">Use of features</text>
+<text x="436.3" y="937.5" font-size="24" fill="#4A5A55" text-anchor="middle">Only what you</text>
+<text x="436.3" y="966.3" font-size="24" fill="#4A5A55" text-anchor="middle">need</text>
+<text x="665" y="937.5" font-size="24" fill="#4A5A55" text-anchor="middle">Pay per seat used</text>
+<text x="893.6" y="937.5" font-size="24" fill="#4A5A55" text-anchor="middle">Check you use it</text>
+<text x="893.6" y="966.3" font-size="24" fill="#4A5A55" text-anchor="middle">all</text>
+<rect x="72" y="1025.6" width="936" height="76.4" rx="18" fill="#E1EEE8"/>
+<text x="102" y="1065.6" font-size="28" font-weight="bold" fill="#10705A">Whichever column wins, someone checked the fit before signing.</text>
+<rect x="0" y="1230" width="1080" height="120" fill="#FFFFFF"/>
+<polygon points="129.9,1277.8 129.9,1282.2 123.2,1285.1 122.2,1288.4 125.9,1294.6 123.3,1298.2 116.2,1296.6 113.4,1298.6 112.7,1305.9 108.5,1307.2 103.7,1301.8 100.3,1301.8 95.5,1307.2 91.3,1305.9 90.6,1298.6 87.8,1296.6 80.7,1298.2 78.1,1294.6 81.8,1288.4 80.8,1285.1 74.1,1282.2 74.1,1277.8 80.8,1274.9 81.8,1271.6 78.1,1265.4 80.7,1261.8 87.8,1263.4 90.6,1261.4 91.3,1254.1 95.5,1252.8 100.3,1258.2 103.7,1258.2 108.5,1252.8 112.7,1254.1 113.4,1261.4 116.2,1263.4 123.3,1261.8 125.9,1265.4 122.2,1271.6 123.2,1274.9" fill="#10705A"/>
+<circle cx="102" cy="1280" r="11.7" fill="#F6F2E8"/>
+<text x="146" y="1272" font-size="30" font-weight="bold" fill="#14302A">Tony Taslim</text>
+<text x="146" y="1304" font-size="22" fill="#4A5A55">Efficient Business Solutions</text>
+<text x="1008" y="1326" font-size="20" fill="#B8741A" text-anchor="end" font-style="italic">Enterprise structure, translated.</text>
+</svg>
